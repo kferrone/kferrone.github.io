@@ -1,0 +1,9 @@
+@api_key = 288811369362-338dnkd1pk76vds4jnl8mkp7fh1p12vv.apps.googleusercontent.com
+@url = https://www.googleapis.com/blogger/v3
+@blog_id = 3240227952105036963
+
+### Get the posts
+GET {{url}}/blogs/{{blog_id}}/posts?key={{api_key}}
+
+### try this one
+GET https://www.googleapis.com/blogger/v3/blogs/3240227952105036963?key=288811369362-338dnkd1pk76vds4jnl8mkp7fh1p12vv.apps.googleusercontent.com
