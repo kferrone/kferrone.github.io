@@ -6,6 +6,7 @@ theme: jekyll-theme-cayman
 repository: kferrone/kferrone.github.io
 plugins:
   - jekyll-coffeescript
+  - jekyll-assets
 exclude: [
   'vendor',
   'script',
@@ -17,3 +18,7 @@ exclude: [
   'README.md',
   'LICENSE'
 ]
+assets:
+  source_maps: true
+  destination: "/assets"
+  compression: false
