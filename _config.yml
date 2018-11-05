@@ -3,6 +3,10 @@ description: My personal site to show off what I'm all about.
 show_downloads: false
 google_analytics: UA-127861278-3
 theme: jekyll-theme-cayman
+source: www
+repository: kferrone/kferrone.github.io
+plugins:
+  - jekyll-coffeescript
 exclude: [
   'vendor',
   'script',

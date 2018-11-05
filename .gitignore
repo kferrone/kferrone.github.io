@@ -5,3 +5,5 @@ Gemfile.lock
 /vendor/
 .bundle
 .settings
+/bin/
+.classpath
