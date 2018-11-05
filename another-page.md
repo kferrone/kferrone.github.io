@@ -4,7 +4,12 @@ layout: default
 
 # Welcome to another page
 
+
+
+<app-drawer>
 yay_
+</app-drawer>
+
 
 <iframe 
   width="100%" 
