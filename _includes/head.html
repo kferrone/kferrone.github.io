@@ -1,6 +1,7 @@
 <head>
 
-    <title>{{ site.data.me.name }}</title>
+    {% seo %}
+
     {% if site.google_analytics %}
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
     <script>
@@ -25,12 +26,14 @@
 
     <script
         src="/assets/js/script.js"
-        type="text/javascript"/>
+        type="text/javascript"></script>
 
     <meta charset="UTF-8">
+    
+    <!-- This line helps browsers find the atom feed -->
+    <link title="{{ site.title }} Atom" type="application/atom+xml" rel="alternate" href="{{ site.url }}/atom.xml" />
+    <link title="{{ site.title }} RSS" type="application/rss+xml" rel="alternate"  href="{{ site.url }}/rss.xml"   />
 
-    {% seo %}
-    {% feed_meta %} 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">

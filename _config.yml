@@ -8,7 +8,6 @@ plugins:
   - jekyll-coffeescript
   - jekyll-sitemap
   - jekyll-seo-tag
-  - jekyll-feed
   - jemoji
 exclude: [
   'vendor',
@@ -19,9 +18,6 @@ exclude: [
   '*.http',
   'docs',
   'README.md',
-  'LICENSE'
+  'LICENSE',
+  'codealike.json'
 ]
-assets:
-  source_maps: true
-  destination: "/assets"
-  compression: false

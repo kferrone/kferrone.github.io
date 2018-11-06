@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
-  {% include head.html %}
-  <body>
-    <a id="skip-to-content" href="#content">Skip to the content.</a>
+{% include head.html %}
 
-    {% include header.html %}
+<body>
+  <a id="skip-to-content" href="#content">Skip to the content.</a>
 
-    <main id="content" class="main-content" role="main">
-      {{ content }}
+  {% include header.html %}
 
-      {% include footer.html%}
-    </main>
-  </body>
+  <main id="content" class="main-content" role="main">
+    {{ content }}
+
+    {% include footer.html%}
+  </main>
+</body>
+
 </html>
