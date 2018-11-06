@@ -3,6 +3,7 @@ layout: default
 title:  "Welcome to Jekyll!"
 categories: [announcements]
 tags: [websites]
+author: Kelly Ferrone
 ---
 
 # Getting Started with Jekyll

@@ -1,1 +1,3 @@
-github.kellyferrone.com
+---
+---
+{{ site.data.me.domain }}

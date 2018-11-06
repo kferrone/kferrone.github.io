@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Kellys Home Page
 ---
 
 # {{ site.data.me.name }}

@@ -6,7 +6,10 @@ theme: jekyll-theme-cayman
 repository: kferrone/kferrone.github.io
 plugins:
   - jekyll-coffeescript
-  - jekyll-assets
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jemoji
 exclude: [
   'vendor',
   'script',
