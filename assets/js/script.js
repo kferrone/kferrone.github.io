@@ -1,36 +1,6 @@
 ---
 ---
-
 class AppDrawer extends HTMLElement {
-
-  // A getter/setter for an open property.
-  get open() {
-    return this.hasAttribute('open');
-  }
-
-  set open(val) {
-    // Reflect the value of the open property as an HTML attribute.
-    if (val) {
-      this.setAttribute('open', '');
-    } else {
-      this.removeAttribute('open');
-    }
-    this.toggleDrawer();
-  }
-
-  // A getter/setter for a disabled property.
-  get disabled() {
-    return this.hasAttribute('disabled');
-  }
-
-  set disabled(val) {
-    // Reflect the value of the disabled property as an HTML attribute.
-    if (val) {
-      this.setAttribute('disabled', '');
-    } else {
-      this.removeAttribute('disabled');
-    }
-  }
 
   // Can define constructor arguments if you wish.
   constructor() {
@@ -42,12 +12,12 @@ class AppDrawer extends HTMLElement {
 
     // Setup a click listener on <app-drawer> itself.
     this.addEventListener('click', e => {
-      // Don't toggle the drawer if it's disabled.
-      if (this.disabled) {
-        return;
-      }
-      this.toggleDrawer();
+      console.log('I was clicked bro');
     });
+
+    const shadow = this.attachShadow({mode: 'open'});
+    shadow.innerHTML = '<h1>Hello Shadow DOM</h1>';
+
   }
 
   toggleDrawer() {
@@ -56,3 +26,31 @@ class AppDrawer extends HTMLElement {
 }
 
 window.customElements.define('app-drawer', AppDrawer);
+
+const define = window.hybrids.define;
+const html = window.hybrids.html;
+
+// Define hybrid properties
+const SimpleCounter = {
+count: 0,
+render: ({ count }) => html`
+    <button onclick="${host => {host.count += 1; }}">
+    Count: ${count}
+    </button>
+`,
+};
+
+// Make <simple-counter> custom element alive!
+define('simple-counter', SimpleCounter);
+
+//check this one out: https://alligator.io/vuejs/vue-integrate-web-components/
+//and this one: http://vuetips.com/vue-web-components
+$(window).on('load', function() {
+  new Vue({
+      el: '#bubsss',
+      data: {
+          message: 'Hello Me!'
+      }
+  });
+  console.log('All assets are loaded')
+})

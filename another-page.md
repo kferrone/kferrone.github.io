@@ -7,9 +7,9 @@ layout: default
 
 
 <app-drawer>
-yay_
 </app-drawer>
 
+<simple-counter></simple-counter>
 
 <iframe 
   width="100%" 

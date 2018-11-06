@@ -5,6 +5,13 @@ title: Kellys Home Page
 
 # {{ site.data.me.name }}
 
+{% raw %}
+<div id="bubsss">
+  <p>{{ message }}</p>
+</div>
+{% endraw %}
+
+
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
 [Link to another page](./another-page.html).

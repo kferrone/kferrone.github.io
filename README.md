@@ -6,6 +6,11 @@
 
 ![Thumbnail of Cayman](thumbnail.png)
 
+## Resources  
+
+ - https://stackoverflow.com/questions/16947337/can-i-import-an-externally-hosted-file-with-sass
+ - https://github.com/nicolas-van/bootstrap-4-github-pages
+
 ## Usage
 
 To use the Cayman theme:
