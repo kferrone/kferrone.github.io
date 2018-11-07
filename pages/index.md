@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Kellys Home Page
+permalink: /
 ---
 
 # {{ site.data.me.name }}
@@ -15,7 +16,7 @@ title: Kellys Home Page
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
-[Link to another page](./another-page.html).
+[Link to another page](./another-page/).
 
 There should be whitespace between paragraphs.
 
