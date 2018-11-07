@@ -8,6 +8,7 @@ title: Kellys Home Page
 {% raw %}
 <div id="bubsss">
   <p>{{ message }}</p>
+  <x-ticking-paragraph :contents="paragraphContents" @tick="logTick"></x-ticking-paragraph>
 </div>
 {% endraw %}
 

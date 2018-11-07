@@ -46,10 +46,20 @@ define('simple-counter', SimpleCounter);
 //check this one out: https://alligator.io/vuejs/vue-integrate-web-components/
 //and this one: http://vuetips.com/vue-web-components
 $(window).on('load', function() {
-  new Vue({
+  
+  Vue.config.ignoredElements = [
+    'x-ticking-paragraph'
+  ]
+  
+  var vm = new Vue({
       el: '#bubsss',
       data: {
           message: 'Hello Me!'
+      },
+      methods: {
+        logTick() {
+          console.log(`The paragraph ticked again. >_>`)
+        }
       }
   });
   console.log('All assets are loaded')
