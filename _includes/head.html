@@ -1,5 +1,10 @@
 <head>
 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
     {% seo %}
 
     {% if site.google_analytics %}
@@ -14,6 +19,10 @@
         gtag('config', '{{ site.google_analytics }}');
     </script>
     {% endif %}
+
+    <!-- These lines help browsers find the blogs feeds -->
+    <link title="{{ site.title }} Atom" type="application/atom+xml" rel="alternate" href="{{ site.url }}/atom.xml" />
+    <link title="{{ site.title }} RSS" type="application/rss+xml" rel="alternate"  href="{{ site.url }}/rss.xml"   />
 
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.min.js"></script>
 
@@ -33,19 +42,7 @@
         type="text/javascript"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
-    <link rel="import" href="{{ '/assets/components/ticking-paragraph.html' | relative_url }}">
-
-    <meta charset="UTF-8">
     
-    <!-- This line helps browsers find the atom feed -->
-    <link title="{{ site.title }} Atom" type="application/atom+xml" rel="alternate" href="{{ site.url }}/atom.xml" />
-    <link title="{{ site.title }} RSS" type="application/rss+xml" rel="alternate"  href="{{ site.url }}/rss.xml"   />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#157878">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-
     
 </head>

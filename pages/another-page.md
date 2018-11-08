@@ -7,11 +7,6 @@ permalink: /another-page/
 
 
 
-<app-drawer>
-</app-drawer>
-
-<simple-counter></simple-counter>
-
 <iframe 
   width="100%" 
   

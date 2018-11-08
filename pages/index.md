@@ -9,7 +9,6 @@ permalink: /
 {% raw %}
 <div id="bubsss">
   <p>{{ message }}</p>
-  <x-ticking-paragraph :contents="paragraphContents" @tick="logTick"></x-ticking-paragraph>
 </div>
 {% endraw %}
 
@@ -17,6 +16,8 @@ permalink: /
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
 [Link to another page](./another-page/).
+
+[Go to the Lab](./lab/)
 
 There should be whitespace between paragraphs.
 
