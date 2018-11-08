@@ -24,9 +24,8 @@ So here we go.
 
 ### Importing Html With XMLHttpRequest
 
+<!-- div w3-include-html="/assets/components/thing.html"></div -->
 
-
-<div w3-include-html="/assets/components/thing.html"></div>
 
 ### A Custom Web Component
 
@@ -79,3 +78,6 @@ So here we go.
   - {{  view.title }} - {{ view.type }}
 {% endfor %}
 
+### Here is a SPA Style View
+
+<killer-view></killer-view>

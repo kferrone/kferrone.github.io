@@ -8,7 +8,7 @@ permalink: /
 
 {% raw %}
 <div id="bubsss">
-  <p>{{ message }}</p>
+  <p>{{ coolio }}</p>
 </div>
 {% endraw %}
 

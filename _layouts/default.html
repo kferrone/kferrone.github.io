@@ -10,13 +10,20 @@
     {% endraw %}
   <div id="belly">
 
-    
-
     <a id="skip-to-content" href="#content">Skip to the content.</a>
 
     {% include header.html %}
 
     <main id="content" class="main-content" role="main">
+      
+        {% for view in site.views %}
+        {% if view.type == 'i-template' %}
+    
+        {{ view.content }}
+    
+        {% endif %}
+        {% endfor %}
+      
       {{ content }}
 
       {% include footer.html%}
