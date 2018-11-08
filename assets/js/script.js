@@ -27,18 +27,21 @@ window.customElements.define(
 
 //check this one out: https://alligator.io/vuejs/vue-integrate-web-components/
 //and this one: http://vuetips.com/vue-web-components
-$(window).on('load', function() {
+$(document).ready(function() {
   
+  Vue.config.ignoredElements = [
+    'simple-counter',
+    'complex-counter'
+  ];
+
   var vm = new Vue({
       el: '#belly',
       data: {
-          bellySound: 'grrrrrrrrrr'
+          bellySound: 'grrrrrrrrrr',
+          coolio: 'Super cool stuff goin down.'
       }
   });
   console.log('All assets are loaded');
-
-
-  
 
 })
 

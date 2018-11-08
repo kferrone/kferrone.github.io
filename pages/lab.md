@@ -21,17 +21,10 @@ So here we go.
 </div>
 {% endraw %}
 
+
 ### Importing Html With XMLHttpRequest
 
-<script type="module">
-    import {addTextToBody, includeHTML} from '/assets/js/util.mjs';
-    import('/assets/js/me.mjs');
 
-    addTextToBody('Modules are pretty cool.');
-
-    
-includeHTML();
-</script>
 
 <div w3-include-html="/assets/components/thing.html"></div>
 
@@ -69,3 +62,20 @@ includeHTML();
 {% for school in site.education %}
   - {{  school.title }} 
 {% endfor %}
+
+### A List of Blog Posts
+
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
+
+### Check Out My Views
+
+{% for view in site.views %}
+  - {{  view.title }} - {{ view.type }}
+{% endfor %}
+

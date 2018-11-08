@@ -4,8 +4,10 @@ show_downloads: false
 google_analytics: UA-127861278-3
 theme: jekyll-theme-cayman
 repository: kferrone/kferrone.github.io
+collections_dir: collections
 collections:
   - education
+  - views
 plugins:
   - jekyll-coffeescript
   - jekyll-sitemap
@@ -21,5 +23,6 @@ exclude: [
   'docs',
   'README.md',
   'LICENSE',
-  'codealike.json'
+  'codealike.json',
+  '.DS_Store'
 ]
