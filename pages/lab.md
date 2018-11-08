@@ -1,9 +1,11 @@
 ---
 layout: default
 permalink: /lab/
+title: Laboratory
+tags: pages
 ---
 
-# Welcome to my laboratory
+# Welcome to my {{ page.title }}
 
 I should do something interesting instead of fuck around. 
 
@@ -14,8 +16,8 @@ So here we go.
 ### Vue JS example
 
 {% raw %}
-<div id="bubsss">
-  <p>{{ message }}</p>
+<div>
+  <p>My belly sounds like {{ bellySound }}</p>
 </div>
 {% endraw %}
 
@@ -43,3 +45,27 @@ includeHTML();
 
 <complex-counter>
 </complex-counter>
+
+### Looping Through Pages Collection
+
+{% for page in site.pages %}
+  <p>{{ page.title }} </p>
+{% endfor %}
+
+### List of Static Files
+
+{% for file in site.static_files %}
+  - {{  file.name }}
+{% endfor %}
+
+### Checkin Collections
+
+{% for collection in site.collections %}
+  - {{  collection.directory }} 
+{% endfor %}
+
+### Checkin the edu
+
+{% for school in site.education %}
+  - {{  school.title }} 
+{% endfor %}

@@ -1,4 +1,6 @@
-window.customElements.define('kf-shadow-test', class ShadowTest extends HTMLElement {
+window.customElements.define(
+  'kf-shadow-test', 
+  class ShadowTest extends HTMLElement {
 
   // Can define constructor arguments if you wish.
   constructor() {
@@ -6,7 +8,7 @@ window.customElements.define('kf-shadow-test', class ShadowTest extends HTMLElem
     // This is specific to CE and required by the spec.
     super();
   
-    console.log('Howdy everyone')
+    console.log('Howdy everyone');
   
     // Setup a click listener on <app-drawer> itself.
     this.addEventListener('click', e => {
@@ -28,12 +30,12 @@ window.customElements.define('kf-shadow-test', class ShadowTest extends HTMLElem
 $(window).on('load', function() {
   
   var vm = new Vue({
-      el: '#bubsss',
+      el: '#belly',
       data: {
-          message: 'Hello Me!'
+          bellySound: 'grrrrrrrrrr'
       }
   });
-  console.log('All assets are loaded')
+  console.log('All assets are loaded');
 
 
   

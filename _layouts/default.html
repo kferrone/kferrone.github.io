@@ -3,16 +3,17 @@
 {% include head.html %}
 
 <body>
-  <a id="skip-to-content" href="#content">Skip to the content.</a>
+  <div id="belly">
+    <a id="skip-to-content" href="#content">Skip to the content.</a>
 
-  {% include header.html %}
+    {% include header.html %}
 
-  <main id="content" class="main-content" role="main">
-    {{ content }}
+    <main id="content" class="main-content" role="main">
+      {{ content }}
 
-    {% include footer.html%}
-  </main>
-  
+      {% include footer.html%}
+    </main>
+  </div>
 </body>
 
 </html>
