@@ -1,3 +1,5 @@
+const $ = window.$;
+
 // utils.mjs
 export function addTextToBody(text) {
     const div = document.createElement('div');
@@ -7,6 +9,16 @@ export function addTextToBody(text) {
 
 export function blahBla() {
     return 'Bla Bla Bla Blahhhh';
+}
+
+export function getBlogPost(category,year,month,day,name) {
+    $.ajax({
+        url: `/${category}/${year}/${month}/${day}/${name}.html`,
+        dataType: 'html',
+        success: function(data) {
+            console.log('The blog data looks like:',data);
+        }
+    });
 }
 
 export function includeHTML() {

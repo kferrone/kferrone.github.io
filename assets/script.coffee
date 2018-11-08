@@ -1,9 +1,14 @@
 ---
 ---
+
+define = window.hybrids.define
+html = window.hybrids.html
+ignoredElements = []
+
 $(document).ready ->
     
     {% for view in site.views %}
-    {% if view.type == 'coffee' %}
+    {% if view.type == 'coffee' or view.type == 'js' %}
 
     `{{ view.content }}`
 
@@ -11,6 +16,26 @@ $(document).ready ->
 
     {% endif %}
     {% endfor %}
+
+    ###
+    {% for component in site.components %}
+    {% if component.type == 'coffee' or component.type == 'js' %}
+
+    `{{ component.content }}`
+
+    {% case component.provider %}
+    {% when 'vue' %}
+    Vue.component('{{ view.selector }}',this.{{ view.class }})
+    {% when 'hybrids' %}
+    define('{{ component.selector }}', new {{ component.class }}());
+    {% else %}
+    console.log('The {{ component.selector }} does not have a provider')
+    {% endcase %}
+    
+
+    {% endif %}
+    {% endfor %}
+    ###
     
     Vue.config.ignoredElements = [
         'simple-counter',

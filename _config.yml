@@ -8,6 +8,7 @@ collections_dir: collections
 collections:
   - education
   - views
+  - components
 plugins:
   - jekyll-coffeescript
   - jekyll-sitemap
