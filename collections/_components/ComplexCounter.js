@@ -1,6 +1,6 @@
 ---
 title: Complex Counter
-type: js
+type: coffee
 selector: complex-counter
 class: ComplexCounter
 template: inline
@@ -16,4 +16,5 @@ class ComplexCounter {
             </button>
         `
     } 
+
 }
