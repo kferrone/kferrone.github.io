@@ -13,8 +13,6 @@ import('/assets/modules/index.mjs').then((util) => {
 
   util.addTextToBody('Modules are pretty cool.');
 
-  util.getBlogPost('announcements','2018','11','04','StartingWithJekyll');
-
   util.includeHTML();
 
   {% include viewGenerator.js %}
@@ -29,6 +27,8 @@ import('/assets/modules/index.mjs').then((util) => {
     });
   
     console.log('All assets are loaded');
+
+    util.getBlogPost('announcements','2018','11','04','StartingWithJekyll');
     
   });
 

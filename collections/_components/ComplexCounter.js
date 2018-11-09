@@ -1,6 +1,6 @@
 ---
 title: Complex Counter
-type: coffee
+type: js
 selector: complex-counter
 class: ComplexCounter
 template: inline

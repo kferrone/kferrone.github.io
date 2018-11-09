@@ -81,3 +81,14 @@ So here we go.
 ### Here is a SPA Style View
 
 <killer-view></killer-view>
+
+### Custom Blog Post Element
+
+<blog-post title="I am a blog title">
+  <p>Really cool blog content goes here.</p>
+  <p>Totally Sick dude!</p>
+</blog-post>
+
+<div id="apply-test">
+  Hello there
+</div>
