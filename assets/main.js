@@ -1,22 +1,35 @@
 ---
 ---
+import('/assets/modules/index.mjs').then((util) => {
 
-const define = window.hybrids.define;
-const html = window.hybrids.html;
-const ignoredElements = [
-  'simple-counter'
-];
+  console.log('The special message is: ' + util.doHello());
 
-{% include viewGenerator.js %}
+  const define = window.hybrids.define;
+  const html = window.hybrids.html;
+  //const util = module.util; 
+  const ignoredElements = [
+    'simple-counter'
+  ];
 
-$(document).ready(function() {
+  util.addTextToBody('Modules are pretty cool.');
+
+  util.getBlogPost('announcements','2018','11','04','StartingWithJekyll');
+
+  util.includeHTML();
+
+  {% include viewGenerator.js %}
+
+  $(document).ready(function() {
+
+    Vue.config.ignoredElements = ignoredElements;
+
+    var vm = new Vue({
+        el: '#belly',
+        data: util.getDataModel()
+    });
   
-  Vue.config.ignoredElements = ignoredElements;
-
-  var vm = new Vue({
-      el: '#belly',
-      data: JSON.parse($('script[id="data-model"]').html())
+    console.log('All assets are loaded');
+    
   });
-  console.log('All assets are loaded');
 
 });

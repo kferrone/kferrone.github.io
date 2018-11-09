@@ -11,6 +11,10 @@ export function blahBla() {
     return 'Bla Bla Bla Blahhhh';
 }
 
+export function doHello() {
+    return 'Hello modulicous world';
+}
+
 export function getBlogPost(category,year,month,day,name) {
     $.ajax({
         url: `/${category}/${year}/${month}/${day}/${name}.html`,
@@ -19,6 +23,10 @@ export function getBlogPost(category,year,month,day,name) {
             console.log('The blog data looks like:',data);
         }
     });
+}
+
+export function getDataModel() {
+    return JSON.parse($('script[id="data-model"]').html())
 }
 
 export function includeHTML() {
