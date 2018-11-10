@@ -1,11 +1,8 @@
 ---
 title: Killer View
 type: coffee
-selector: killer-view
-class: KillerView
 ---
-
-@KillerView =
+Vue.component('killer-view', {
     template: '#killer-view'
     data: ->
         {
@@ -19,3 +16,6 @@ class: KillerView
                 console.log('The killer view was clicked! ')
                 return
         }
+})
+
+    

@@ -9,7 +9,10 @@
             "request": "launch",
             "name": "Preview",
             "url": "http://localhost:4000",
-            "webRoot": "${workspaceFolder}_site"
+            "webRoot": "${workspaceFolder}_site",
+            "runtimeArgs": [
+                "--load-extension=${env:CHROME_EXTENSIONS}/nhdogjmejiglipccpnnnanhbledajbpd/4.1.5_0"
+            ]
         }
     ]
 }

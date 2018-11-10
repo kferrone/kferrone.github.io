@@ -7,6 +7,9 @@ template: inline
 provider: hybrids
 ---
 
+const define = hybrids.define;
+const html = hybrids.html;
+
 class ComplexCounter {
     constructor() {
         this.count = 0;
@@ -18,3 +21,6 @@ class ComplexCounter {
     } 
 
 }
+
+define('complex-counter',new ComplexCounter());
+ignoredElements.push('complex-counter');

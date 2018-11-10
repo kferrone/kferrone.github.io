@@ -4,7 +4,7 @@
 @import 'jekyll-theme-cayman';
 
 {% for view in site.views %}
-{% if view.type == 'scss' %}
+{% if view.type == 'scss' or view.type == 'css' or view.type == 'sass' %}
 
 {{ view.content }}
 
@@ -13,4 +13,8 @@
 
 blog-post {
     --blog-title-color: rgb(0, 38, 255);
+}
+
+.main-content table {
+    display: contents;
 }

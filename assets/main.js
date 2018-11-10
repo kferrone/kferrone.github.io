@@ -4,8 +4,9 @@ import('/assets/modules/index.mjs').then((util) => {
 
   console.log('The special message is: ' + util.doHello());
 
-  const define = window.hybrids.define;
-  const html = window.hybrids.html;
+  const hybrids = window.hybrids;
+  const customElements = window.customElements;
+  
   //const util = module.util; 
   const ignoredElements = [
     'simple-counter'
