@@ -1,0 +1,5 @@
+{
+    {% for data in site.data %}
+    "{{ data[0] }}":{{ data[1] | jsonify }},
+    {% endfor %}
+}

@@ -1,0 +1,57 @@
+#/bin/bash
+
+VIEW_DIR="$(pwd)/collections/_views"
+VIEW_NAME=$1
+NEW_VIEW_DIR="${VIEW_DIR}/${VIEW_NAME}"
+VIEW_FILE_BASE="${NEW_VIEW_DIR}/${VIEW_NAME}"
+
+if [ ! -d $NEW_VIEW_DIR ]; then
+
+    mkdir $NEW_VIEW_DIR
+
+    
+cat >"${VIEW_FILE_BASE}.coffee"<<EOL
+---
+title: ${VIEW_NAME}
+type: coffee
+---
+Vue.component('${VIEW_NAME}',{
+    template: '#${VIEW_NAME}'
+    props: []
+    data: ->
+        {
+
+        }
+    methods:
+        {
+
+        }
+})
+EOL
+
+cat >"${VIEW_FILE_BASE}.html"<<EOL
+---
+title: ${VIEW_NAME}
+type: x-template
+selector: ${VIEW_NAME}
+---
+{% raw %}
+
+{% endraw %}
+EOL
+
+cat >"${VIEW_FILE_BASE}.scss"<<EOL
+---
+title: Killer View
+type: scss
+---
+#${VIEW_NAME} {
+
+}
+EOL
+
+fi
+
+kebabToPascal() {
+    echo "${1}" | sed -r 's/(^|-)([a-z])/\U\2/g'
+}

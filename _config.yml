@@ -4,6 +4,7 @@ show_downloads: false
 google_analytics: UA-127861278-3
 theme: jekyll-theme-cayman
 repository: kferrone/kferrone.github.io
+domain: github.kellyferrone.com
 collections_dir: collections
 collections:
   - education

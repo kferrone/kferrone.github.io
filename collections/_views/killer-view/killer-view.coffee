@@ -13,7 +13,7 @@ Vue.component('killer-view', {
         {
             check: ->
                 @checked = !@checked
-                console.log('The killer view was clicked! ')
+                console.log('The killer view was clicked! ' + util.doHello())
                 return
         }
 })

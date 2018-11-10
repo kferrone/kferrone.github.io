@@ -9,3 +9,7 @@ bio:
 
 bellySound: 'grrrrrrrrrr'
 coolio: 'Super cool stuff goin down.'
+
+thing: 
+  food: 'goo'
+  height: '9 ft'

@@ -17,7 +17,7 @@ So here we go.
 
 {% raw %}
 <div>
-  <p>My belly sounds like {{ bellySound }}</p>
+  <p>My belly sounds like {{ me.bellySound }}</p>
 </div>
 {% endraw %}
 
@@ -67,7 +67,7 @@ So here we go.
 <ul>
   {% for post in site.posts %}
     <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
+      <a href="{{ post.url }}">{{ post.title }} - {{ post.id }}</a>
     </li>
   {% endfor %}
 </ul>
@@ -78,20 +78,34 @@ So here we go.
   - {{  view.title }} - {{ view.type }}
 {% endfor %}
 
+### Here is the Data
+
+{% for data in site.data %}
+  - {{ data[0] }} - {{ data[1] | jsonify }}
+{% endfor %}
+
 ### Here is a SPA Style View
 
 <killer-view></killer-view>
 
 ### Custom Blog Post Element
 
-<blog-post title="I am a blog title">
+<test-blog-post title="I am a hybrid style blog component">
   <p>Really cool blog content goes here.</p>
   <p>Totally Sick dude!</p>
+</test-blog-post>
+
+<blog-post 
+  title="I am a VueJS Component blog title"
+  href="/announcements/2018/11/04/StartingWithJekyll">
+
 </blog-post>
 
-<div id="apply-test">
-  Hello there
-</div>
+### Getting Values From Site
+
+ - {{ site.title }}
+ - {{ site.description }}
+ - {{ site.domain }}
 
 ### A PureCSS Table
 

@@ -25,6 +25,14 @@ export function getBlogPost(category,year,month,day,name) {
     });
 }
 
+export function getHtml(path,success) {
+    $.ajax({
+        url: `${path}.html`,
+        dataType: 'html',
+        success: success
+    });
+}
+
 export function getDataModel() {
     return JSON.parse($('script[id="data-model"]').html())
 }

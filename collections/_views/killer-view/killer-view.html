@@ -3,8 +3,10 @@ title: Killer View
 type: x-template
 selector: killer-view
 ---
+{% raw %}
 <div class="checkbox-wrapper" @click="check">
     <div :class="{ checkbox: true, checked: checked }"></div>
     <div class="title"></div>
     <p>I am the killer view dude!</p>
 </div>
+{% endraw %}

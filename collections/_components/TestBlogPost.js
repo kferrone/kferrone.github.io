@@ -1,8 +1,8 @@
 ---
-title: Blog Post
+title: Test Blog Post
 type: js
-selector: blog-post
-class: BlogPost
+selector: test-blog-post
+class: TestBlogPost
 template: inline
 provider: hybrids
 ---
@@ -14,7 +14,7 @@ function mooNow() {
     console.log('Mooooooooo');
 }
 
-class BlogPost {
+class TestBlogPost {
     constructor() {
         this.title = '';
         this.hidden = false;
@@ -65,5 +65,5 @@ class BlogPost {
     } 
 }
 
-define('blog-post',new BlogPost());
-ignoredElements.push('blog-post');
+define('test-blog-post',new TestBlogPost());
+ignoredElements.push('test-blog-post');

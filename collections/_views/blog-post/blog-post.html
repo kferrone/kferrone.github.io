@@ -1,0 +1,13 @@
+---
+title: blog-post
+type: x-template
+selector: blog-post
+---
+{% raw %}
+<h2 class="blog-title" @click="read">
+    {{ title }}
+</h2>
+<div class="blog-content" v-html="content">
+    
+</div>
+{% endraw %}

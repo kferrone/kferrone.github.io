@@ -42,10 +42,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-    <script id="data-model" type="application/json">
-        {{ site.data.me | jsonify }}
-    </script>
-
     <script
         type="text/javascript"    
         src="/assets/main.js">
@@ -61,15 +57,35 @@
         rel="stylesheet" 
         href="{{ '/assets/style.css?v=' | append: site.github.build_revision | relative_url }}">
 
-    {% for view in site.views %}
-    {% if view.type == 'x-template' %}
-
-    <script type="text/x-template" id="{{ view.selector }}">
-        {{ view.content }}
+    {% assign xTemplates = site.views | where:"type","x-template" %}
+    {% for xTemplate in xTemplates %}
+    <script type="text/x-template" id="{{ xTemplate.selector }}">
+        <div class="{{ xTemplate.selector }}">
+            {{ xTemplate.content }}
+        </div>
     </script>
-
-    {% endif %}
     {% endfor %}
-    
+
+    <script id="data-model" type="application/json">
+        {
+            "title": "{{ site.title }}",
+            "description": "{{ site.description }}",
+            "theme": "{{ site.theme }}",
+            "domain": "{{ site.domain }}",
+            "posts": [
+                {% for post in site.posts %}
+                {
+                    "id": "{{ post.id }}",
+                    "title": "{{ post.title }}",
+                    "categories": {{ post.categories | jsonify }},
+                    "tags": {{ post.tags | jsonify }}
+                }{% unless forloop.last %},{% endunless %}
+                {% endfor %}
+            ],
+            {% for data in site.data %}
+            "{{ data[0] }}":{{ data[1] | jsonify }}{% unless forloop.last %},{% endunless %}
+            {% endfor %}
+        }
+    </script>
     
 </head>
