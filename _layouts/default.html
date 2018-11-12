@@ -1,1 +1,14 @@
-{{ content }}
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  {% include head.html %}
+  <body>
+    <div id="belly" class="wrapper">
+      {% include header.html %}
+      <section>
+        {{ content }}
+      </section>
+      {% include footer.html %}
+    </div>
+    {% include foot.html %}
+  </body>
+</html>

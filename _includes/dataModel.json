@@ -11,16 +11,21 @@
         {% endfor %}
     ],
     "posts": [
+        {% assign categories_array = "" | split:"|" %}
         {% for post in site.posts %}
         {
             "id": "{{ post.id }}",
             "slug": "{{ post.slug }}",
             "title": "{{ post.title }}",
             "categories": {{ post.categories | jsonify }},
+            {% for category in post.categories %}
+                {% assign categories_array = categories_array | push: category | uniq %}
+            {% endfor %}
             "tags": {{ post.tags | jsonify }}
         }{% unless forloop.last %},{% endunless %}
         {% endfor %}
     ],
+    "categories": {{ categories_array | jsonify }},
     {% for data in site.data %}
     "{{ data[0] }}":{{ data[1] | jsonify }}{% unless forloop.last %},{% endunless %}
     {% endfor %}

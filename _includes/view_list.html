@@ -1,8 +1,14 @@
-{% assign views = site.views | where:"ext",".html" %}
-{% for view in views %}
+{% assign views = (site.views | where:"ext",".html") | sort: 'order' %}
 <ul>
+    {% for view in views %}
+    {% if view.hidden %}
+    {% else %}
     <li>
-        <a href="#{{ view.slug }}">{{ view.title }}</a>
+        <a href="/#{{ view.slug }}">{{ view.title }}</a>
+    </li>
+    {% endif %}
+    {% endfor %}
+    <li>
+        <a href="#blog/fooey">Tester</a>
     </li>
 </ul>
-{% endfor %}

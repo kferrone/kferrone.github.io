@@ -3,17 +3,5 @@ layout: default
 title: Kellys Home Page
 permalink: /
 ---
-<!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}">
-  {% include head.html %}
-  <body>
-    <div id="belly" class="wrapper">
-      {% include header.html %}
-      <section>
-        {% include views.html %}
-      </section>
-      {% include footer.html %}
-    </div>
-    {% include foot.html %}
-  </body>
-</html>
+{% include views.html %}
+
