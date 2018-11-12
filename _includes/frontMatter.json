@@ -1,0 +1,9 @@
+{% assign view = site.views | where:"slug","include.slug" %}
+{
+    {% for val in view %}
+    {% if site.internal_properties contains val %}
+    {% else %}
+    "{{ val }}": {{ view[val] | jsonify }}{% unless forloop.last %},{% endunless %}
+    {% endif %}
+    {% endfor %}
+}

@@ -3,9 +3,14 @@
 Vue.component('killer-view',
     template: '#killer-view'
     props:
-        [
-            'active'
-        ]
-    data: ->
-        smoove: true
+        activeView: String
+        slug: String
+        title: String
+        date: String
+        draft: Boolean
+        categories: Array
+        tags: Array
+    computed:
+        isActive: ->
+            @activeView == @slug
 )

@@ -1,7 +1,12 @@
 ---
 ---
 {% raw %}
-<div class="killer-view">
-
+<div 
+    class="killer-view" 
+    v-bind:class="{ 
+        'hidden': !isActive
+    }">
+    <h1>{{ title }}</h1>
+    <slot></slot>
 </div>
 {% endraw %}

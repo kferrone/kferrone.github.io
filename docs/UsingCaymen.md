@@ -1,17 +1,4 @@
----
-layout: default
-title: Kellys Home Page
-permalink: /
----
-
-# {{ site.data.me.name }}
-
-{% raw %}
-<div id="bubsss">
-  <p>{{ coolio }}</p>
-</div>
-{% endraw %}
-
+# Caaymen Theme
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 

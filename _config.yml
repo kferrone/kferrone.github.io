@@ -6,6 +6,18 @@ theme: jekyll-theme-cayman
 repository: kferrone/kferrone.github.io
 domain: github.kellyferrone.com
 collections_dir: collections
+internal_properties: 
+  - ext
+  - path
+  - relative_path
+  - id
+  - previous
+  - next
+  - output
+  - content
+  - url
+  - collection
+  - excerpt
 collections:
   - components
   - views

@@ -5,4 +5,3 @@ title: Tester
 tags: pages
 ---
 
-<killer-view></killer-view>
