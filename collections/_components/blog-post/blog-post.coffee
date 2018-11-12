@@ -3,11 +3,9 @@
 Vue.component('blog-post',
     template: '#blog-post'
     props:
-        [
-            'title',
-            'href',
-            'excerpt'
-        ]
+        title: String
+        href: String
+        excerpt: String
     data: ->
         hidden: false
         content: ''
