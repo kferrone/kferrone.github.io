@@ -1,7 +1,7 @@
 ---
 ---
 
-@import 'jekyll-theme-cayman';
+@import "{{ site.theme }}";
 
 {% for view in site.components %}
 {% if view.ext == '.scss' or view.ext == '.css' or view.ext == '.sass' %}
@@ -14,11 +14,3 @@
 {{ view.content }}
 {% endif %}
 {% endfor %}
-
-blog-post {
-    --blog-title-color: rgb(0, 38, 255);
-}
-
-.main-content table {
-    //display: contents;
-}

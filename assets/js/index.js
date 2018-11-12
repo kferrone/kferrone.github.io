@@ -1,5 +1,6 @@
 ---
 ---
+
 import('/assets/modules/index.mjs').then((app) => {
 
   console.log('The special message is: ' + app.doHello());

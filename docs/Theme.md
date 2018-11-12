@@ -1,13 +1,10 @@
-# Caaymen Theme
+
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
-[Link to another page](./another-page/).
-
-[Go to the Lab](./lab/)
+[Link to another page](./another-page.html).
 
 There should be whitespace between paragraphs.
-
 
 There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
 
@@ -40,20 +37,20 @@ end
 
 #### Header 4
 
-* This is an unordered list following a header.
-* This is an unordered list following a header.
-* This is an unordered list following a header.
+*   This is an unordered list following a header.
+*   This is an unordered list following a header.
+*   This is an unordered list following a header.
 
 ##### Header 5
 
-1. This is an ordered list following a header.
-2. This is an ordered list following a header.
-3. This is an ordered list following a header.
+1.  This is an ordered list following a header.
+2.  This is an ordered list following a header.
+3.  This is an ordered list following a header.
 
 ###### Header 6
 
 | head1        | head two          | three |
-| :----------- | :---------------- | :---- |
+|:-------------|:------------------|:------|
 | ok           | good swedish fish | nice  |
 | out of stock | good and plenty   | nice  |
 | ok           | good `oreos`      | hmm   |
