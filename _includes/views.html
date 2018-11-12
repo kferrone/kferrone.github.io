@@ -1,0 +1,8 @@
+{% assign views = site.views | where:"ext",".html" %}
+{% for view in views %}
+
+<template id="{{view.slug}}">
+{{ view.content }}
+</template>
+
+{% endfor %}

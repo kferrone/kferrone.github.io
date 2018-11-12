@@ -56,26 +56,22 @@ So here we go.
   - {{  collection.directory }} 
 {% endfor %}
 
-### Checkin the edu
-
-{% for school in site.education %}
-  - {{  school.title }} 
-{% endfor %}
-
 ### A List of Blog Posts
 
-<ul>
-  {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }} - {{ post.id }}</a>
-    </li>
-  {% endfor %}
-</ul>
+{% for post in site.posts %}
+  
+  - [{{ post.title }} - {{ post.id }}]({{ post.url }})
+    {% for val in post %}
+    - {{ val }} - {{ post[val] }}
+    {% endfor %}
+  
+{% endfor %}
 
 ### Check Out My Views
 
-{% for view in site.views %}
-  - {{  view.title }} - {{ view.type }}
+{% assign views = site.views | where_exp:"item","item.ext == '.html'" %}
+{% for view in views %}
+  - {{  view.title }} - {{ view.type }} - {{ view.slug }} - {{ view.ext }}
 {% endfor %}
 
 ### Here is the Data
@@ -86,7 +82,7 @@ So here we go.
 
 ### Here is a SPA Style View
 
-<killer-view></killer-view>
+{% include views.html %}
 
 ### Custom Blog Post Element
 
@@ -97,8 +93,10 @@ So here we go.
 
 <blog-post 
   title="I am a VueJS Component blog title"
-  href="/announcements/2018/11/04/StartingWithJekyll">
-
+  href="/technology/2018/11/04/StartingWithJekyll">
+  <template slot="excerpt">
+    I guess this could be the excerpt. If clicked, will I be replaced with blog content?
+  </template>
 </blog-post>
 
 ### Getting Values From Site

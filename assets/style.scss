@@ -3,11 +3,15 @@
 
 @import 'jekyll-theme-cayman';
 
-{% for view in site.views %}
-{% if view.type == 'scss' or view.type == 'css' or view.type == 'sass' %}
-
+{% for view in site.components %}
+{% if view.ext == '.scss' or view.ext == '.css' or view.ext == '.sass' %}
 {{ view.content }}
+{% endif %}
+{% endfor %}
 
+{% for view in site.views %}
+{% if view.ext == '.scss' or view.ext == '.css' or view.ext == '.sass' %}
+{{ view.content }}
 {% endif %}
 {% endfor %}
 

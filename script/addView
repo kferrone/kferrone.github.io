@@ -1,7 +1,9 @@
 #/bin/bash
 
-VIEW_DIR="$(pwd)/collections/_views"
+
 VIEW_NAME=$1
+VIEW_TYPE=$2
+VIEW_DIR="$(pwd)/collections/_${VIEW_TYPE}"
 NEW_VIEW_DIR="${VIEW_DIR}/${VIEW_NAME}"
 VIEW_FILE_BASE="${NEW_VIEW_DIR}/${VIEW_NAME}"
 
@@ -19,13 +21,9 @@ Vue.component('${VIEW_NAME}',{
     template: '#${VIEW_NAME}'
     props: []
     data: ->
-        {
 
-        }
     methods:
-        {
 
-        }
 })
 EOL
 

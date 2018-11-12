@@ -1,8 +1,8 @@
 ---
 ---
-import('/assets/modules/index.mjs').then((util) => {
+import('/assets/modules/index.mjs').then((app) => {
 
-  console.log('The special message is: ' + util.doHello());
+  console.log('The special message is: ' + app.doHello());
 
   const hybrids = window.hybrids;
   const customElements = window.customElements;
@@ -12,11 +12,7 @@ import('/assets/modules/index.mjs').then((util) => {
     'simple-counter'
   ];
 
-  util.addTextToBody('Modules are pretty cool.');
-
-  util.includeHTML();
-
-  {% include viewGenerator.js %}
+  {% include jsGenerator.js %}
 
   $(document).ready(function() {
 
@@ -24,12 +20,16 @@ import('/assets/modules/index.mjs').then((util) => {
 
     var vm = new Vue({
         el: '#belly',
-        data: util.getDataModel()
+        data: app.getDataModel(),
+        beforeCreate: function() {
+          console.log('Just saying hi before I create the vue instance.');
+        },
+        created: function() {
+          console.log('The vue instance has been created.');
+        }
     });
   
     console.log('All assets are loaded');
-
-    util.getBlogPost('announcements','2018','11','04','StartingWithJekyll');
     
   });
 

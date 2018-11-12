@@ -7,9 +7,9 @@ repository: kferrone/kferrone.github.io
 domain: github.kellyferrone.com
 collections_dir: collections
 collections:
-  - education
-  - views
   - components
+  - views
+  - lib
 plugins:
   - jekyll-coffeescript
   - jekyll-sitemap

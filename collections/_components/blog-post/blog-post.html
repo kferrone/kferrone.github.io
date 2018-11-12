@@ -1,0 +1,16 @@
+---
+---
+{% raw %}
+<h2 class="blog-title" @click="read">
+    {{ title }}
+</h2>
+<div class="blog-excerpt">
+    <slot name="excerpt"></slot>
+</div>
+<div 
+    class="blog-content" 
+    v-html="content"
+    v-bind:class="{ 'blog-content-loaded': loaded,'blog-content-hidden': !loaded }">
+    
+</div>
+{% endraw %}
