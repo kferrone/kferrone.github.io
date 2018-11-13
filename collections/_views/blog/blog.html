@@ -1,13 +1,13 @@
 ---
 title: Blog
 order: 2
+subViews:
+  - food
+  - technology
 ---
-{% for post in site.posts %}
+{% raw %}
 <blog-post 
-  title="{{ post.title }}"
-  href="{{ post.id }}">
-  <template slot="excerpt">
-    
-  </template>
-</blog-post>
-{% endfor %}
+  v-for="post in posts"
+  v-bind="post"
+  :key="post.id"></blog-post>
+{% endraw %}

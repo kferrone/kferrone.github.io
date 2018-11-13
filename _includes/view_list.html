@@ -1,7 +1,7 @@
 {% assign views = (site.views | where:"ext",".html") | sort: 'order' %}
 <ul>
     {% for view in views %}
-    {% if view.hidden %}
+    {% if view.order == 0 %}
     {% else %}
     <li>
         <a href="/#{{ view.slug }}">{{ view.title }}</a>
@@ -10,5 +10,8 @@
     {% endfor %}
     <li>
         <a href="#blog/fooey">Tester</a>
+    </li>
+    <li>
+        <a href="#nonsense">Nonsense</a>
     </li>
 </ul>

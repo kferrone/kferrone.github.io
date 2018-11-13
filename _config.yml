@@ -11,7 +11,6 @@ internal_properties:
   - ext
   - path
   - relative_path
-  - id
   - previous
   - next
   - output

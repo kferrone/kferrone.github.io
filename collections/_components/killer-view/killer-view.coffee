@@ -10,6 +10,8 @@ Vue.component('killer-view',
         draft: Boolean
         categories: Array
         tags: Array
+        order: Number
+        subViews: Array
     computed:
         isActive: ->
             @activeView == @slug

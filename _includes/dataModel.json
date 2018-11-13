@@ -3,26 +3,21 @@
     "description": "{{ site.description }}",
     "theme": "{{ site.theme }}",
     "domain": "{{ site.domain }}",
-    "activeView": "main",
+    "defaultView": "main",
     "views": [
         {% assign views = site.views | where:"ext",".html" %}
         {% for view in views %}
-            {% include frontMatter.json slug=view.slug %}{% unless forloop.last %},{% endunless %}
+            {% include frontMatter.json slug=view.slug key='views' %}{% unless forloop.last %},{% endunless %}
         {% endfor %}
     ],
     "posts": [
         {% assign categories_array = "" | split:"|" %}
-        {% for post in site.posts %}
-        {
-            "id": "{{ post.id }}",
-            "slug": "{{ post.slug }}",
-            "title": "{{ post.title }}",
-            "categories": {{ post.categories | jsonify }},
-            {% for category in post.categories %}
+        {% assign views = site.posts%}
+        {% for view in views %}
+            {% include frontMatter.json slug=view.slug key='posts' %}{% unless forloop.last %},{% endunless %}
+            {% for category in view.categories %}
                 {% assign categories_array = categories_array | push: category | uniq %}
             {% endfor %}
-            "tags": {{ post.tags | jsonify }}
-        }{% unless forloop.last %},{% endunless %}
         {% endfor %}
     ],
     "categories": {{ categories_array | jsonify }},

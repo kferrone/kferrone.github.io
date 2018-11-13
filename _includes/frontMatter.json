@@ -1,9 +1,12 @@
-{% assign view = site.views | where:"slug","include.slug" %}
+{% assign view = site[input.key] | where:"slug","include.slug" %}
+{% assign keys = "" | split:"|" %}
+{% for val in view %}
+{% unless site.internal_properties contains val %}
+    {% assign keys = keys | push: val | uniq %}
+{% endunless %}
+{% endfor %}
 {
-    {% for val in view %}
-    {% if site.internal_properties contains val %}
-    {% else %}
-    "{{ val }}": {{ view[val] | jsonify }}{% unless forloop.last %},{% endunless %}
-    {% endif %}
+    {% for key in keys %}
+    {{ key | jsonify }}:{{ view[key] | jsonify }}{% unless forloop.last %},{% endunless %}
     {% endfor %}
 }
