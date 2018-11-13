@@ -5,7 +5,7 @@ google_analytics: UA-127861278-1
 google_tag_manager: GTM-MVFWXX9
 theme: jekyll-theme-minimal
 repository: kferrone/kferrone.github.io
-domain: github.kellyferrone.com
+domain: www.kellyferrone.com
 collections_dir: collections
 logo: /assets/img/logo.png
 internal_properties: 
