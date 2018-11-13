@@ -30,6 +30,7 @@ $(document).ready(function() {
       created: function() {
         console.log('The vue instance has been created.');
         this.changeView(this.route);
+        document.title = this.activeTitle;
       },
       computed: {
         activeView: function() {
