@@ -19,10 +19,7 @@ class TestBlogPost {
         this.title = '';
         this.hidden = false;
         this.render = ({ title, hidden }) => html`
-            <link 
-                rel="stylesheet" 
-                href="/assets/style.css">
-            <style include="/assets/style.css">
+            <style>
                 :host(:hover) {
                     color: red;
                 }

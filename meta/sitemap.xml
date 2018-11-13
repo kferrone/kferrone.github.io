@@ -1,0 +1,36 @@
+---
+layout: null
+title : Site Map
+permalink: /sitemap.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" 
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+<url>
+<loc>{{ site.url }}/</loc>
+</url>
+
+{% assign views = site.views | where:"ext",".html" %}
+{% for view in views %}
+<url>
+<loc>{{ site.url }}/#{{ view.slug }}</loc>
+</url>
+{% endfor %}
+
+{% for post in site.posts %}
+<url>
+<loc>{{ site.url }}/#post/{{ post.slug }}</loc>
+<lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+</url>
+{% endfor %}
+
+{% assign pages = site.pages %}
+{% for page in pages %}
+<url>
+<loc>{{ site.url }}{{ page.url }}</loc>
+</url>
+{% endfor %}
+</urlset>

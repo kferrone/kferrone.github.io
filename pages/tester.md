@@ -9,7 +9,11 @@ tags: pages
     - {{ cat | first | strip_html  }}
 {% endfor %}
 
-{% assign posts = site.posts%}
-{% for post in posts %}
-    {% include frontMatter.json slug=post.slug key='posts' %}{% unless forloop.last %},{% endunless %}
+{% assign pages = site.pages %}
+{% for page in pages %}
+    - The coolness: {{ page.name }} - {{ site.url }}{{ page.url }}
+    {% for val in page %}
+        - {{ val[0] }}
+    {% endfor %}
 {% endfor %}
+

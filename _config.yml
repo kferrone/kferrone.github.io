@@ -1,7 +1,8 @@
 title: Kelly Ferrone
 description: My personal site to show off what I'm all about. 
 show_downloads: false
-google_analytics: UA-127861278-3
+google_analytics: UA-127861278-1
+google_tag_manager: GTM-MVFWXX9
 theme: jekyll-theme-minimal
 repository: kferrone/kferrone.github.io
 domain: github.kellyferrone.com
@@ -24,7 +25,6 @@ collections:
   - lib
 plugins:
   - jekyll-coffeescript
-  - jekyll-sitemap
   - jekyll-seo-tag
   - jemoji
 exclude: [
