@@ -35,7 +35,9 @@ $(document).ready(function() {
         activeView: function() {
           const view = this.routeParts[0];
           console.log('The view to load is ',view);
-          return this.exists(this.getViewData(view)) ? view : this.defaultView;
+          var viewData = this.getViewData(view);
+          //document.title = viewData.title;
+          return this.exists(viewData) ? view : this.defaultView;
         },
         activeSubView: function() {
           return this.routeParts[1] || null;
@@ -49,11 +51,19 @@ $(document).ready(function() {
           if (this.exists(activePost)) {
             return activePost;
           } else return null;
+        },
+        activeTitle: function() {
+          if (this.activeView == 'post') {
+            return this.activePost.title;
+          } else {
+            return this.getViewData(this.activeView).title;
+          }
         }
       },
       methods: {
         changeView: function(route) {
           this.route = route;
+          
         },
         getViewData: function(slug) {
           return this.views.filter((view) => view.slug === slug)[0];
@@ -69,6 +79,7 @@ $(document).ready(function() {
 
   $(window).on('hashchange', (e) => {
     vm.changeView(window.location.hash);
+    document.title = vm.activeTitle;
   });
 
   console.log('All assets are loaded');
