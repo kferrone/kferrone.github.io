@@ -1,3 +1,5 @@
+
+
 {% for component in site.lib %}
   {% if component.ext == '.coffee' %}
     {{ component.content }}
@@ -14,6 +16,7 @@
   {% endif %}
 {% endfor %}
 
+//all them vuews
 {% for component in site.views %}
   {% if component.ext == '.coffee' %}
     {{ component.content }}
@@ -21,3 +24,5 @@
     {% include iife.js content=component.content %}
   {% endif %}
 {% endfor %}
+
+console.dir('The routes are ',routes);

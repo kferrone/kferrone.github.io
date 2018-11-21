@@ -2,7 +2,7 @@
 ---
 {% raw %}
 <h2 class="blog-title">
-    <a v-bind:href="linker">{{ title }}</a>
+    <router-link v-bind:to="linker">{{ title }}</router-link>
 </h2>
 <div class="blog-excerpt">
     <div id="blog-excerpt" v-html="excerpt"></div>

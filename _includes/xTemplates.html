@@ -6,3 +6,12 @@
     </div>
 </script>
 {% endfor %}
+
+{% assign xViews = site.views | where:"ext",".html" %}
+{% for xView in xViews %}
+<script type="text/x-template" id="{{ xView.slug }}">
+    <div class="{{ xView.slug }}">
+        {{ xView.content }}
+    </div>
+</script>
+{% endfor %}

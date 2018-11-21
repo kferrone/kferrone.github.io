@@ -15,7 +15,7 @@ Vue.component('blog-post',
         loaded: false
     computed:
         linker: ->
-            return '#post/' + @slug
+            return '/post/' + @slug
     methods:
         read: ->
             if not @loaded

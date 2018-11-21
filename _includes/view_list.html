@@ -4,7 +4,8 @@
     {% if view.order == 0 %}
     {% else %}
     <li>
-        <a href="/#{{ view.slug }}">{{ view.title }}</a>
+        <a href="/#"></a>
+        <router-link to="{{ view.permalink }}">{{ view.title }}</router-link>
     </li>
     {% endif %}
     {% endfor %}
@@ -14,4 +15,11 @@
     <li>
         <a href="#nonsense">Nonsense</a>
     </li>
+    <li>
+        <router-link to="/foo">Go to Foo</router-link>
+    </li>
+    <li>
+        <router-link to="/bar">Go to Bar</router-link>
+    </li>
+    
 </ul>
