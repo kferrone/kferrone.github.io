@@ -16,7 +16,7 @@ permalink: /another-page/
 
 [back](./)
 
-{% include image.html image_id='1ntpV6zc3xmmelYRqmUL366MAyKOwQo5j-w' %}
+{% include image.html image_id='1ntpV6zc3xmmelYRqmUL366MAyKOwQo5j-w' alt='A pic of me' %}
 
 {% for repository in site.github.public_repositories %}
   * [{{ repository.name }}]({{ repository.html_url }})
