@@ -105,6 +105,14 @@ So here we go.
  - {{ site.description }}
  - {{ site.domain }}
 
+### Checking out the envrionment variable
+
+The environment is: {{ jekyll.environment }}
+
+### Building The Script Tags
+
+
+
 ### A PureCSS Table
 
 <table class="pure-table">
