@@ -5,7 +5,7 @@ var vm = new Vue({
     }),
     data: dataModel,
     created: function () {
-        this.setTitle(this.getViewData(this.$route.path).title);
+        util.setTitle(this.getViewData(this.$route.path).title);
     },
     computed: {
         activeView: function () {
@@ -14,13 +14,10 @@ var vm = new Vue({
     },
     watch: {
         activeView: function (activeView) {
-            this.setTitle(activeView.title);
+            util.setTitle(activeView.title);
         }
     },
     methods: {
-        setTitle: function (title) {
-            document.title = title;
-        },
         getViewList: function () {
             return this.views
                 .filter(view => view.order != 0 && !view.draft)

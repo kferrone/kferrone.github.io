@@ -8,14 +8,17 @@ routes.push
             content: String
         created: ->
             @setPostContent()
+            util.appendToTitle(" | #{@post.title}")
         computed:
             post: ->
                 @$root.getPostMeta(@$route.params.slug)
+        watch:
+            content: () ->
+                util.appendToTitle(" | #{post.title}")
         methods:
             setPostContent: ->
                 html = util.getLocal(@post.id)
                 if html?
-                    console.log('Found a post')
                     @content = html
                 else
                     util.getHtml(@post.id).then(

@@ -20,3 +20,11 @@ export function saveLocal(key, value) {
 export function getLocal(key) {
     return window.localStorage.getItem(key);
 }
+
+export function setTitle(title) {
+    document.title = title;
+}
+
+export function appendToTitle(extra) {
+    document.title += extra;
+}
