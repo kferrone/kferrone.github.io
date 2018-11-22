@@ -14,8 +14,6 @@ window.customElements.define('kf-shadow-test',class ShadowTest extends HTMLEleme
       // This is specific to CE and required by the spec.
       super();
     
-      console.log('Howdy everyone');
-    
       // Setup a click listener on <app-drawer> itself.
       this.addEventListener('click', e => {
         console.log('I was clicked bro');

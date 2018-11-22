@@ -5,18 +5,30 @@ class: Post
 permalink: /post
 ---
 {% raw %}
-<div 
-    class="post-view">
+<div class="post-view">
     <h1 class="post-title">{{ post.title }}</h1>
+    <div class="pure-g">
+        <div class="pure-u-1-3">
+            <small>{{ post.date | formatDate }}</small>
+            <p class="view">by {{ post.author }}</p>
+        </div>
+        <div class="pure-u-1-3">
+            <small>
+                categories: 
+                <em v-for="category in post.categories">
+                    <router-link v-bind:to="'/blog?category=' + category">/{{ category }} </router-link>
+                </em>
+            </small>
+            </br>
+            <small>
+                tags: 
+                <em v-for="tag in post.tags">
+                    <router-link v-bind:to="'/blog?tag=' + tag">#{{ tag }} </router-link>
+                </em>
+            </small>
+        </div>
+        <div class="pure-u-1-3"></div>
+    </div>
     <div class="post-content" v-html="content"></div>
-    <small>
-        categories: 
-        <em v-for="category in post.categories">/{{ category }} </em>
-    </small>
-    </br>
-    <small>
-        tags: 
-        <em v-for="tag in post.tags">#{{ tag }} </em>
-    </small>
 </div>
 {% endraw %}

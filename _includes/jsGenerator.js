@@ -25,4 +25,4 @@
   {% endif %}
 {% endfor %}
 
-console.dir('The routes are ',routes);
+{% include vue.js %}

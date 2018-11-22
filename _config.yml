@@ -21,6 +21,17 @@ js:
         prod: 
           file: lodash.min.js
           integrity: sha384-2HWZ0KJxkQ3nhRpHPzk4AO2iIy1S8rSGwN5MpMS/xf34mqOahLqEbqwvdk48EnEv
+
+    # get yo dates on
+    - id: moment
+      version: 2.22.2
+      env:
+        prod:
+          file: min/moment.min.js
+          integrity: sha384-sIzeKWIAHvT0Vm8QbfLCqZwBG0WMCkWVAOYd/330YSNeeQ1Y57N3T9lQz5Ry/EHH
+        dev:
+          file: moment.js
+          integrity: sha384-rCWDlX0ts8DR19RqjyA5Pi/rsyO1CtL0u3FwkCX9+shkYbnKVIkXceW5FARgCH6T
     
     # Just in case you need to make your own HTML
     - id: '@webcomponents/webcomponentsjs'
