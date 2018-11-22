@@ -7,6 +7,7 @@ template: inline
 provider: hybrids
 ---
 
+const hybrids = window.hybrids;
 const define = hybrids.define;
 const html = hybrids.html;
 
@@ -63,4 +64,3 @@ class TestBlogPost {
 }
 
 define('test-blog-post',new TestBlogPost());
-ignoredElements.push('test-blog-post');

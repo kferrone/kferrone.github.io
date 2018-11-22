@@ -6,7 +6,7 @@ class: ShadowTest
 template: inline
 provider: webComponents
 ---
-customElements.define('kf-shadow-test',class ShadowTest extends HTMLElement {
+window.customElements.define('kf-shadow-test',class ShadowTest extends HTMLElement {
   
     // Can define constructor arguments if you wish.
     constructor() {
@@ -30,5 +30,3 @@ customElements.define('kf-shadow-test',class ShadowTest extends HTMLElement {
       
     }
 });
-
-ignoredElements.push('kf-shadow-test');
