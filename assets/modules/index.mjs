@@ -23,13 +23,29 @@ util.getDataModel().then((response) => {
       },
       created: function() {
         console.log('The vue instance has been created.');
+        this.setTitle(this.getViewData(this.$route.path).title);
       },
       computed: {
-        
+        activeView: function() {
+          return this.getViewData(this.$route.path);
+        }
+      },
+      watch: {
+        activeView: function(activeView) {
+          this.setTitle(activeView.title);
+        }
       },
       methods: {
-        getViewData: function(slug) {
-          return this.views.filter((view) => view.slug === slug)[0];
+        setTitle: function(title) {
+          document.title = title;
+        },
+        getViewList: function() {
+          return this.views
+                    .filter(view => view.order != 0 && !view.draft)
+                    .sort((a,b) => a.order - b.order);
+        },
+        getViewData: function(path) {
+          return this.views.filter((view) => view.permalink === path)[0];
         },
         exists: function(val) {
           return (typeof val != 'undefined');

@@ -9,6 +9,5 @@ export async function getHtml(path) {
 }
 
 export async function getDataModel() {
-    //return JSON.parse($('script[id="data-model"]').html())
     return axios.get('/assets/models/model.json');
 }

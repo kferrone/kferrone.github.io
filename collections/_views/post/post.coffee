@@ -2,8 +2,7 @@
 ---
 routes.push
     path: '/post/:slug'
-    component: Vue.component(
-        'post',
+    component: Vue.component('post',
         template: '#post'
         data: ->
             content: String
