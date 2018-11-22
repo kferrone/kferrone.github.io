@@ -34,7 +34,7 @@ util.getDataModel().then((response) => {
         exists: function(val) {
           return (typeof val != 'undefined');
         },
-        getPostData: function(slug) {
+        getPostMeta: function(slug) {
           return this.posts.filter((post) => post.slug === slug)[0];
         }
       }

@@ -1,8 +1,0 @@
-{% assign views = site.views | where:"ext",".html" %}
-{% for view in views %}
-<killer-view 
-    v-bind:active-view="activeView"
-    v-bind="getViewData('{{ view.slug }}')">
-    {{ view.content }}
-</killer-view>
-{% endfor %}

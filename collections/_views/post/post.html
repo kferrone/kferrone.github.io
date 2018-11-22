@@ -4,6 +4,10 @@ order: 0
 class: Post
 permalink: /post
 ---
-
-<post-view
-    v-bind="activePost"></post-view>
+{% raw %}
+<div 
+    class="post-view">
+    <h1 class="post-title">{{ post.title }}</h1>
+    <div class="post-content" v-html="content"></div>
+</div>
+{% endraw %}

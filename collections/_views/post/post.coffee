@@ -6,13 +6,15 @@ routes.push
         'post',
         template: '#post'
         data: ->
-            activePost: Object
+            content: String
         created: ->
-            @activePost = @getActivePostMeta()
+            @setPostContent()
         computed:
-            activePostSlug: ->
-                @$route.params.slug
+            post: ->
+                @$root.getPostMeta(@$route.params.slug) 
         methods:
-            getActivePostMeta: ->
-                @$root.getPostData(@activePostSlug) 
+            setPostContent: ->
+                util.getHtml(@post.id).then(
+                    (response) => @content = response.data
+                )
     )

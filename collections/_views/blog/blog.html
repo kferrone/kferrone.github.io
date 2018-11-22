@@ -9,7 +9,7 @@ subViews:
 ---
 {% raw %}
 <blog-post 
-  v-for="post in this.$root.$data.posts"
+  v-for="post in posts"
   v-bind="post"
   :key="post.id"></blog-post>
 {% endraw %}

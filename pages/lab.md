@@ -80,9 +80,6 @@ So here we go.
   - {{ data[0] }} - {{ data[1] | jsonify }}
 {% endfor %}
 
-### Here is a SPA Style View
-
-{% include views.html %}
 
 ### Custom Blog Post Element
 

@@ -6,6 +6,6 @@ routes.push
         'blog',
         template: '#blog'
         computed:
-            tester: ->
-                @$route
+            posts: ->
+                @$root.$data.posts
     )
