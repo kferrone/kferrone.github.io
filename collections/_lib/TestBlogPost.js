@@ -7,7 +7,6 @@ template: inline
 provider: hybrids
 ---
 
-const hybrids = window.hybrids;
 const define = hybrids.define;
 const html = hybrids.html;
 
