@@ -45,7 +45,7 @@ util.getDataModel().then((response) => {
                     .sort((a,b) => a.order - b.order);
         },
         getViewData: function(path) {
-          return this.views.filter((view) => view.permalink === path)[0];
+          return this.views.filter((view) => path.includes(view.permalink))[0];
         },
         exists: function(val) {
           return (typeof val != 'undefined');
