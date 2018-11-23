@@ -24,12 +24,6 @@
     </ul>
     {% endif %}
 
-    {% raw %}
-    <ul>
-        <li v-for="view in getViewList()" :key="view.id">
-            <router-link :to="view.permalink">{{ view.title }}</router-link>
-        </li>
-    </ul>
-    {% endraw %}
+    <view-menu :view-list="getViewList()"></view-menu>
 
 </header>

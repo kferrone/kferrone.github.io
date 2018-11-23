@@ -5,5 +5,23 @@ class: ContactMe
 permalink: /contact
 ---
 {% raw %}
-<p>I am the contact me view bro</p>
+<form class="pure-form pure-form-stacked contact-me">
+    <fieldset>
+        <div class="pure-control-group">
+            <label for="subject">Subject</label>
+            <input id="subject" type="text" placeholder="Message title" v-model="subject">
+        </div>
+        <div class="pure-control-group">
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="Email" v-model="email">
+        </div>
+        <div class="pure-control-group">
+            <label for="message">Message</label>
+            <textarea id="message" class="pure-input-1-2" placeholder="Message to Kelly" v-model="message"></textarea>
+        </div>
+        <div class="pure-control-group">
+            <button type="submit" class="pure-button pure-button-primary">Send</button>
+        </div>
+    </fieldset>
+</form>
 {% endraw %}

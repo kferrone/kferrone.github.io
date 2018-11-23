@@ -1,0 +1,29 @@
+{% for dep in site.dependencies.css %}
+{% if jekyll.environment == "production" %}
+    {% if dep.env.prod %}
+        {% assign file = dep.env.prod.file %}
+        {% assign integrity = dep.env.prod.integrity %}
+    {% endif %}
+{% elsif jekyll.environment == "development" %}
+    {% if dep.env.dev %}
+        {% assign file = dep.env.dev.file %}
+        {% assign integrity = dep.env.dev.integrity %}
+    {% else %}
+        {% assign file = dep.env.prod.file %}
+        {% assign integrity = dep.env.prod.integrity %}
+    {% endif %}
+{% endif %}
+{% if file %}
+<link 
+href="{{ site.dependencies.repo }}/{{ dep.id }}@{{ dep.version }}/{{ file }}"
+{% if integrity %}
+integrity="{{ integrity }}"
+{% endif %}
+rel="stylesheet" 
+crossorigin="anonymous">
+{% endif %}
+{% endfor %}
+
+<link 
+    rel="stylesheet" 
+    href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision }}">

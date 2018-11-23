@@ -3,6 +3,7 @@ description: My personal site to show off what I'm all about.
 show_downloads: false
 google_analytics: UA-127861278-1
 google_tag_manager: GTM-MVFWXX9
+hubspot: 3962794
 theme: jekyll-theme-minimal
 repository: kferrone/kferrone.github.io
 domain: www.kellyferrone.com
@@ -10,9 +11,19 @@ collections_dir: collections
 logo: /assets/img/logo.png
 
 # this is all of the third party libraries using unpkg.com as the cdn
-js:
+dependencies:
   repo: https://unpkg.com
-  dependencies:
+  css:
+
+    #dead simple css theme
+    - id: purecss
+      version: 1.0.0
+      env:
+        prod: 
+          file: build/pure-min.css
+          integrity: sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w
+
+  js:
     
     # useful utilities
     - id: lodash

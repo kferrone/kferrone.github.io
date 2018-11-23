@@ -8,15 +8,8 @@
     <link title="{{ site.title }} RSS" type="application/rss+xml" rel="alternate"  href="{{ site.url }}/rss.xml"   />
 
     {% seo %}
-
-    <link 
-        rel="stylesheet" 
-        href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" 
-        integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" 
-        crossorigin="anonymous">
-
-    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision }}">
-
+    
+    {% include css_imports.html %}
 
     {% include js_imports.html %}
     

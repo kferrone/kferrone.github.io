@@ -1,0 +1,16 @@
+---
+---
+{% raw %}
+<ul class="pure-menu-list view-menu">
+    <li 
+        v-for="view in viewList" 
+        :key="view.id"
+        class="pure-menu-item">
+        <router-link 
+            :to="view.permalink" 
+            class="pure-menu-link">
+            {{ view.title }}
+        </router-link>
+    </li>
+</ul>
+{% endraw %}

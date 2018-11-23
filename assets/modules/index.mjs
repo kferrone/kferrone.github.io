@@ -7,13 +7,7 @@ util.getDataModel().then((response) => {
   var hybrids = window.hybrids;
   var customElements = window.customElements;
   var routes = [];
-
-  Vue.config.ignoredElements = [
-    'simple-counter',
-    'complex-counter',
-    'kf-shadow-test',
-    'test-blog-post'
-  ];
+  var exports = {};
 
   {% include jsGenerator.js %}
   
