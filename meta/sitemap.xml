@@ -16,13 +16,13 @@ permalink: /sitemap.xml
 {% assign views = site.views | where:"ext",".html" %}
 {% for view in views %}
 <url>
-<loc>https://{{ site.domain }}/#{{ view.slug }}</loc>
+<loc>https://{{ site.domain }}/#{{ view.permalink }}</loc>
 </url>
 {% endfor %}
 
 {% for post in site.posts %}
 <url>
-<loc>https://{{ site.domain }}/#post/{{ post.slug }}</loc>
+<loc>https://{{ site.domain }}/#/post/{{ post.slug }}</loc>
 <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
 </url>
 {% endfor %}
