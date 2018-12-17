@@ -5,7 +5,6 @@ var vm = new Vue({
     }),
     data: dataModel,
     created: function () {
-        console.log(this.$route.path);
         util.setTitle(this.getViewData(this.$route.path).title);
     },
     computed: {

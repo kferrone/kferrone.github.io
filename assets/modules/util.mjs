@@ -38,5 +38,5 @@ export function getGravatar(email, size) {
 
     var size = size || 80;
 
-    return 'http://www.gravatar.com/avatar/' + MD5(email) + '.jpg?s=' + size;
+    return 'https://www.gravatar.com/avatar/' + MD5(email) + '.jpg?s=' + size;
 }

@@ -9,7 +9,6 @@ Vue.component('blog-page',
         permalink: String
         categories: Array
         tags: Array
-        class: String
         date: String
         draft: Boolean
         order: Number
