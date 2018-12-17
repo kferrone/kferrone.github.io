@@ -13,3 +13,32 @@ coolio: 'Super cool stuff goin down.'
 thing: 
   food: 'goo'
   height: '9 ft'
+
+education:
+
+  - name: Weber State University
+    degree: Bachelor of Science
+    major: Finance
+    website: https://www.weber.edu/
+    attended:
+      from: 2011
+      to: 2015
+    address: 
+      street: 3848 Harrison Blvd
+      city: Ogden
+      state: UT
+      zip: 84408
+    
+  - name: Salt Lake Community College
+    degree: Associates of Science
+    major: Business
+    website: https://www.slcc.edu/
+    attended:
+      from: 2008
+      to: 2011
+    address: 
+      street: 4600 South Redwood Road Student Center, Main Floor
+      city: Salt Lake City
+      state: UT
+      zip: 84129
+      

@@ -6,3 +6,11 @@ permalink: /home
 ---
 
 <p>I am the home view bro</p>
+
+<h2>Education</h2>
+
+<school 
+    v-for="school in $root.me.education"
+    v-bind="school"
+    :key="school.name">
+</school>
