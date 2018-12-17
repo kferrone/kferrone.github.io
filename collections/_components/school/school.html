@@ -2,7 +2,9 @@
 ---
 {% raw %}
 <h2 class="school-name">
-    <a href="{{ website }}">
+    <a 
+        v-bind:href="website"
+        target="_blank">
         {{ name }}
     </a>
 </h2>
