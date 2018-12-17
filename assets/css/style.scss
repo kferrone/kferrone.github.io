@@ -1,7 +1,7 @@
 ---
 ---
 
-@import "jekyll-pure-blog";
+@import "{{ site.theme }}";
 
 {% for view in site.components %}
 {% if view.ext == '.scss' or view.ext == '.css' or view.ext == '.sass' %}
