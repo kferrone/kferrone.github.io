@@ -7,5 +7,5 @@ routes.push
         template: '#my-home'
         computed:
             profile: ->
-                @$root.me
+                @$root.profile
     )

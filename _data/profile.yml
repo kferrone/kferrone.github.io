@@ -1,0 +1,102 @@
+name: Kelly Ferrone
+email: info@kellyferrone.com
+
+domain: github.kellyferrone.com
+
+bio: |
+  Salt Lake native who obviously loves the outdoors. 
+  Been skateborading and snowboarding for most of my life now. 
+  Very interested in the study of finance and computer science and how they work together. 
+  Great love of learning so I don't take my education for granted. Best description is an analyst.
+
+objective: |
+  Work in the fin-tech industry. Want to see the markets in action and be part of a high tech team taking them on. 
+  Help build software dealing with financial systems and various types of financial firms.
+
+employment:
+
+  - name: Akirix
+    title: dev-ops
+    website: https://www.akirix.com/
+    description: |
+      I am the dev ops guy. 
+    attended:
+      from: 03/2018
+      to: current
+
+  - name: WEBAHOLICS.co
+    title: Developer
+    website: https://webaholics.com/
+    description: |
+      Worked as a backend developer and a software engineer. Wrote out the design/requirement documentations and 
+      worked with other developers to implement the new software for our customers. 
+    attended:
+      from: 03/2017
+      to: 03/2018
+
+  - name: SALT LAKE CONNECTED
+    title: Co Founder
+    website: https://slconnected.com/
+    description: |
+      We built custom software from start to finish for small innovative businesses. 
+      My roles involved mainly software engineer and business analyst. Helped in creating the 
+      overall vision and work-flow to come up with a viable solution for our customers in 
+      timely and cost effective manner.  
+    attended:
+      from: 03/2012
+      to: 03/2017
+
+  - name: BLJ, INC.
+    title: Financial Analyst - Software Engineer
+    description: |
+      Helped analyze and optimize the BLJ trading system in order to 
+      implement the process as an automated system using broker API�s and VBA with Excel and Access.
+    attended:
+      from: 9/2014
+      to: 6/2015
+
+  - name: PENSIONS WEST
+    title: Data Analyst/Entry
+    description: |
+      End-of-year corporate tax preparation. Calculate key metrics and ran tests to ensure accuracy.  
+    attended:
+      from: 12/2011
+      to: 1/2013
+
+  - name: TREELINE BUILDERS
+    title: Office Administrator
+    description: |
+      Bookkeeping, media representation, and procurement of services.
+      Web development/IT 
+    attended:
+      from: 01/2008
+      to: 9/2013
+
+education:
+
+  - name: Weber State University
+    degree: Bachelor of Science
+    major: Finance
+    website: https://www.weber.edu/
+    attended:
+      from: 2011
+      to: 2015
+    address: 
+      street: 3848 Harrison Blvd
+      city: Ogden
+      state: UT
+      zip: 84408
+    
+  - name: Salt Lake Community College
+    degree: Associates of Science
+    major: Business
+    website: https://www.slcc.edu/
+    attended:
+      from: 2008
+      to: 2011
+    address: 
+      street: 4600 South Redwood Road Student Center, Main Floor
+      city: Salt Lake City
+      state: UT
+      zip: 84129
+      

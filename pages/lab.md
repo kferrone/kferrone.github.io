@@ -17,7 +17,7 @@ So here we go.
 
 {% raw %}
 <div>
-  <p>My belly sounds like {{ me.bellySound }}</p>
+  <p>My belly sounds like {{ profile.bellySound }}</p>
 </div>
 {% endraw %}
 

@@ -14,8 +14,8 @@ permalink: /atom.xml
  <updated>{{ site.time | date_to_xmlschema }}</updated>
  <id>{{ site.url }}/</id>
  <author>
-   <name>{{ site.data.me.name | xml_escape }}</name>
-   <email>{{ site.data.me.email }}</email>
+   <name>{{ site.data.profile.name | xml_escape }}</name>
+   <email>{{ site.data.profile.email }}</email>
    <uri>{{ site.url }}</uri>
  </author>
 

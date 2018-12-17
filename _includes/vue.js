@@ -31,7 +31,7 @@ var vm = new Vue({
             return this.posts.filter((post) => post.slug === slug)[0];
         },
         getGravatar: function() {
-            return util.getGravatar(this.me.email,150);
+            return util.getGravatar(this.profile.email,150);
         }
     }
 });
