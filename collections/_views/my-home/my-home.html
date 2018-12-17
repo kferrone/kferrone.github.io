@@ -1,17 +1,19 @@
 ---
-title: Kelly Ferrone Home
+title: Home
 order: 1
 class: MyHome
 permalink: /home
 ---
-
-<p>I am the home view bro</p>
-
+{% raw %}
+<strong>Bio:</strong>
+<p>{{ profile.bio }}</p>
+<strong>Objective:</strong>
+<p>{{ profile.objective }}</p>
 <h2>Education</h2>
-
 <school 
-    v-for="school in $root.me.education"
+    v-for="school in profile.education"
     v-bind="school"
     :key="school.name">
     <hr/>
 </school>
+{% endraw %}
