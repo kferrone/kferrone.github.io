@@ -10,7 +10,7 @@ github_username: kferrone
 repository: kferrone/kferrone.github.io
 domain: www.kellyferrone.com
 collections_dir: collections
-logo: /assets/img/logo.png
+logo: true
 
 # this is all of the third party libraries using unpkg.com as the cdn
 dependencies:
