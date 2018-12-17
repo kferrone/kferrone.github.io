@@ -5,8 +5,13 @@ class: Blog
 permalink: /blog
 ---
 {% raw %}
-<blog-post 
-  v-for="post in posts"
-  v-bind="post"
-  :key="post.id"></blog-post>
+<div 
+  id="blog-reel"
+  class="posts">
+  <blog-post 
+    v-for="post in posts"
+    v-bind="post"
+    :key="post.id">
+  </blog-post>
+</div>
 {% endraw %}

@@ -12,13 +12,26 @@
     <!-- End Google Tag Manager (noscript) -->
     {% endif %}
 
-    <div id="belly" class="wrapper">
-      {% include header.html %}
-      <section>
-        {{ content }}
-      </section>
-      {% include footer.html %}
+    <div id="layout" class="pure-g wrapper">
+      
+      <div class="sidebar pure-u-1 pure-u-md-1-4">
+          {% include header.html %}
+      </div>
+
+      <!-- TODO: Try a section tag here instead of a div -->
+      <div class="content pure-u-1 pure-u-md-3-4">
+          <div>
+            <div class="posts">
+              <blog-page v-bind="activeView">
+                  {{ content }}
+              </blog-page>
+            </div>
+            {% include footer.html %}
+          </div>
+      </div>
     </div>
+
     {% include foot.html %}
+    
   </body>
 </html>

@@ -1,10 +1,11 @@
 var vm = new Vue({
-    el: '#belly',
+    el: '#layout',
     router: new VueRouter({
         routes
     }),
     data: dataModel,
     created: function () {
+        console.log(this.$route.path);
         util.setTitle(this.getViewData(this.$route.path).title);
     },
     computed: {
@@ -24,6 +25,7 @@ var vm = new Vue({
                 .sort((a, b) => a.order - b.order);
         },
         getViewData: function (path) {
+            path = (path == '/') ? '/home' : path;
             return this.views.filter((view) => path.includes(view.permalink))[0];
         },
         getPostMeta: function (slug) {
