@@ -10,6 +10,13 @@ permalink: /home
     <p>{{ profile.bio }}</p>
     <strong>Objective:</strong>
     <p>{{ profile.objective }}</p>
+    <h2>Skills</h2>
+    <skill 
+        v-for="skill in profile.skills"
+        v-bind="skill"
+        :key="skill.name">
+        <hr/>
+    </skill>
     <h2>Work History</h2>
     <employment 
         v-for="job in profile.employment"

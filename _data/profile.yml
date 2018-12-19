@@ -13,6 +13,28 @@ objective: |
   Work in the fin-tech industry. Want to see the markets in action and be part of a high tech team taking them on. 
   Help build software dealing with financial systems and various types of financial firms.
 
+skills:
+
+  - name: FINANCIAL ANALYST
+    description: |
+      Experienced in equity analysis, pro-forma forecasting, and testing investment strategies. 
+      Well versed in many financial products such as Options, Currency Exchange, Equities, and Dept products. 
+      Professional experience in writing analysis reports on portfolios, investment opportunities, and market conditions.
+
+  - name: SOFTWARE ENGINEER & BUSINESS ANALYST
+    description: |
+      Well versed in a variety of modeling languages based on UML and the Requirement gathering process. 
+      Analyzed the product owners business by setting up interviews and asking the right questions 
+      to deeply understand their business. Helped customers discover valuable and economical solutions 
+      to their software needs.
+
+  - name: DEV-OPS & PROJECT MANAGEMENT
+    description: |
+      Extensive knowledge in managing the lifecycle and deployment of software using a wide array of tools. 
+      Skills with source code management tools such as GIT, Gerrit, Hudson, Jenkins etc.for testing, securing, 
+      and distributing code. Skilled with automated build tools such as Composer, Maven, and NPM. 
+      Skilled with documentation and reports for describing projects and assigning tasks.
+
 employment:
 
   - name: Akirix
