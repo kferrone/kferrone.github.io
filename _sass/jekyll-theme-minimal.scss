@@ -148,33 +148,6 @@ strong, b {
 	font-weight: 300;
 	color: $color_3;
 }
-.nav-list {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
-.nav-item {
-	display: inline-block;
-	*display: inline;
-	zoom: 1;
-	a {
-		background: transparent;
-		border: 2px solid rgb(176, 202, 219);
-		color: $white;
-		margin-top: 1em;
-		letter-spacing: 0.05em;
-		text-transform: uppercase;
-		font-size: 85%;
-		&:hover {
-			border: 2px solid rgb(61, 146, 201);
-			text-decoration: none;
-		}
-		&:focus {
-			border: 2px solid rgb(61, 146, 201);
-			text-decoration: none;
-		}
-	}
-}
 .content-subhead {
 	text-transform: uppercase;
 	color: $color_4;
@@ -282,24 +255,6 @@ ul.downloads {
 .downloads ul a:active {
 	background-color:#f0f0f0;
 }
-
-.footer {
-	padding: 1em 0;
-	a {
-		color: $color_8;
-		font-size: 80%;
-	}
-	.pure-menu {
-		a {
-			&:hover {
-				background: none;
-			}
-			&:focus {
-				background: none;
-			}
-		}
-	}
-}
 @media (min-width: 48em) {
 	.content {
 		padding: 2em 3em 0;
@@ -313,9 +268,6 @@ ul.downloads {
 		position: fixed;
 		top: 0;
 		bottom: 0;
-	}
-	.footer {
-		text-align: center;
 	}
 }
 
