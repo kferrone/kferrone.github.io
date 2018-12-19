@@ -29,9 +29,6 @@ var vm = new Vue({
         },
         getPostMeta: function (slug) {
             return this.posts.filter((post) => post.slug === slug)[0];
-        },
-        getGravatar: function() {
-            return util.getGravatar(this.profile.email,150);
         }
     }
 });
