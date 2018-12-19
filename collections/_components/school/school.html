@@ -1,14 +1,16 @@
 ---
 ---
 {% raw %}
-<h2 class="school-name">
-    <a 
-        v-bind:href="website"
-        target="_blank">
-        {{ name }}
-    </a>
-</h2>
-<p><b>Studied:</b> {{ degree }} - {{ major }}</p>
-<p><b>Attended:</b> {{ attended.from }} - {{ attended.to }}</p>
-<slot></slot>
+<div class="school">
+    <h2 class="school-name">
+        <a 
+            v-bind:href="website"
+            target="_blank">
+            {{ name }}
+        </a>
+    </h2>
+    <p><b>Studied:</b> {{ degree }} - {{ major }}</p>
+    <p><b>Attended:</b> {{ attended.from }} - {{ attended.to }}</p>
+    <slot></slot>
+</div>
 {% endraw %}

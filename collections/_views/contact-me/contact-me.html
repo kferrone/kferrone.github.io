@@ -4,25 +4,52 @@ order: 3
 class: ContactMe
 permalink: /contact
 ---
-{% raw %}
 <form 
     class="pure-form pure-form-stacked contact-me">
     <fieldset>
         <div class="pure-control-group">
-            <label for="subject">Subject</label>
-            <input id="subject" name="subject" type="text" placeholder="Message title" v-model="subject">
+            <label 
+                for="subject">
+                Subject
+            </label>
+            <input 
+                id="subject" 
+                name="subject" 
+                type="text" 
+                placeholder="Message title" 
+                v-model="subject">
         </div>
         <div class="pure-control-group">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" placeholder="Email" v-model="email">
+            <label 
+                for="email">
+                Email
+            </label>
+            <input 
+                id="email" 
+                name="email" 
+                type="email" 
+                placeholder="Email" 
+                v-model="email">
         </div>
         <div class="pure-control-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" class="pure-input-1-2" placeholder="Message to Kelly" v-model="message"></textarea>
+            <label 
+                for="message">
+                Message
+            </label>
+            <textarea 
+                id="message" 
+                name="message" 
+                class="pure-input-1-2" 
+                placeholder="Message to Kelly" 
+                v-model="message">
+            </textarea>
         </div>
         <div class="pure-control-group">
-            <button type="submit" class="pure-button pure-button-primary">Send</button>
+            <button 
+                type="submit" 
+                class="pure-button pure-button-primary">
+                Send
+            </button>
         </div>
     </fieldset>
 </form>
-{% endraw %}

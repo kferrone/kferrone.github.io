@@ -1,10 +1,12 @@
 ---
 ---
 {% raw %}
-<h2 class="blog-title">
-    <router-link v-bind:to="linker">{{ title }}</router-link>
-</h2>
-<div class="blog-excerpt">
-    <div id="blog-excerpt" v-html="excerpt"></div>
+<div class="blog-post">
+    <h2 class="blog-title">
+        <router-link v-bind:to="linker">{{ title }}</router-link>
+    </h2>
+    <div class="blog-excerpt">
+        <div id="blog-excerpt" v-html="excerpt"></div>
+    </div>
 </div>
 {% endraw %}

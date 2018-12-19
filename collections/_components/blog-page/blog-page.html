@@ -1,15 +1,17 @@
 ---
 ---
 {% raw %}
-<header class="post-header" v-if="!hideHeader">
-    <h1 class="post-title">
-        {{ title }}
-    </h1>
-    <p class="post-meta">
-        <slot name="meta"></slot>
-    </p>
-</header>
-<div class="post-description">
-    <slot></slot>
+<div class="blog-page">
+    <header class="post-header" v-if="!hideHeader">
+        <h1 class="post-title">
+            {{ title }}
+        </h1>
+        <p class="post-meta">
+            <slot name="meta"></slot>
+        </p>
+    </header>
+    <div class="post-description">
+        <slot></slot>
+    </div>
 </div>
 {% endraw %}

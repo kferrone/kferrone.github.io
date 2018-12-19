@@ -5,22 +5,24 @@ class: MyHome
 permalink: /home
 ---
 {% raw %}
-<strong>Bio:</strong>
-<p>{{ profile.bio }}</p>
-<strong>Objective:</strong>
-<p>{{ profile.objective }}</p>
-<h2>Work History</h2>
-<employment 
-    v-for="job in profile.employment"
-    v-bind="job"
-    :key="job.name">
-    <hr/>
-</employment>
-<h2>Education</h2>
-<school 
-    v-for="school in profile.education"
-    v-bind="school"
-    :key="school.name">
-    <hr/>
-</school>
+<div id="my-home">
+    <strong>Bio:</strong>
+    <p>{{ profile.bio }}</p>
+    <strong>Objective:</strong>
+    <p>{{ profile.objective }}</p>
+    <h2>Work History</h2>
+    <employment 
+        v-for="job in profile.employment"
+        v-bind="job"
+        :key="job.name">
+        <hr/>
+    </employment>
+    <h2>Education</h2>
+    <school 
+        v-for="school in profile.education"
+        v-bind="school"
+        :key="school.name">
+        <hr/>
+    </school>
+</div>
 {% endraw %}

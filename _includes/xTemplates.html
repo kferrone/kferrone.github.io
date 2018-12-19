@@ -1,17 +1,13 @@
 {% assign xTemplates = site.components | where:"ext",".html" %}
 {% for xTemplate in xTemplates %}
 <script type="text/x-template" id="{{ xTemplate.slug }}">
-    <div class="{{ xTemplate.slug }}">
-        {{ xTemplate.content }}
-    </div>
+    {{ xTemplate.content }}
 </script>
 {% endfor %}
 
 {% assign xViews = site.views | where:"ext",".html" %}
 {% for xView in xViews %}
 <script type="text/x-template" id="{{ xView.slug }}">
-    <div class="{{ xView.slug }}">
-        {{ xView.content }}
-    </div>
+    {{ xView.content }}
 </script>
 {% endfor %}
