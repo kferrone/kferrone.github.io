@@ -130,24 +130,6 @@ strong, b {
 #layout {
 	padding: 0;
 }
-.header {
-	text-align: center;
-	top: auto;
-	margin: 3em auto;
-}
-.sidebar {
-	background: rgb(61, 79, 93);
-	color: $white;
-}
-.brand-title {
-	margin: 0;
-	text-transform: uppercase;
-}
-.brand-tagline {
-	margin: 0;
-	font-weight: 300;
-	color: $color_3;
-}
 .content-subhead {
 	text-transform: uppercase;
 	color: $color_4;
@@ -259,15 +241,6 @@ ul.downloads {
 	.content {
 		padding: 2em 3em 0;
 		margin-left: 25%;
-	}
-	.header {
-		margin: 5% 2em 0;
-		text-align: right;
-	}
-	.sidebar {
-		position: fixed;
-		top: 0;
-		bottom: 0;
 	}
 }
 
