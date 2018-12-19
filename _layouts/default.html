@@ -1,33 +1,26 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
+
   {% include head.html %}
+
   <body>
     
-    {% if jekyll.environment == "production" %}
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-      <iframe src="https://www.googletagmanager.com/ns.html?id={{ site.google_tag_manager }}"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    {% endif %}
+    {% include chest.html %}
 
     <div id="layout" class="pure-g wrapper">
-      
-      <blog-header></blog-header>
 
-      <!-- TODO: Try a section tag here instead of a div -->
-      <div class="content pure-u-1 pure-u-md-3-4">
-          <div>
-            <div class="posts">
-              <blog-page v-bind="activeView">
-                  {{ content }}
-              </blog-page>
-            </div>
-            <blog-footer></blog-footer>
-          </div>
-      </div>
+      <blog-header></blog-header>
       
+      <section class="content pure-u-1 pure-u-md-3-4">
+
+        <blog-page v-bind="activeView">
+          {{ content }}
+        </blog-page>
+
+        <blog-footer></blog-footer>
+
+      </section>
+
     </div>
 
     {% include foot.html %}
