@@ -1,10 +1,4 @@
 ---
-title: KF Shadow Test
-type: js
-selector: kf-shadow-test
-class: ShadowTest
-template: inline
-provider: webComponents
 ---
 customElements.define('kf-shadow-test',
 class ShadowTest extends HTMLElement {

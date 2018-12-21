@@ -5,7 +5,5 @@ routes.push
     alias: '/'
     component: Vue.component('my-home',
         template: '#my-home'
-        computed:
-            profile: ->
-                @$root.profile
+        inject: ['profile']
     )

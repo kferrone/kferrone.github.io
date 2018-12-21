@@ -30,5 +30,13 @@ var vm = new Vue({
         getPostMeta: function (slug) {
             return this.posts.filter((post) => post.slug === slug)[0];
         }
+    },
+    provide: function() {
+        return {
+            getViewList: this.getViewList,
+            getViewData: this.getViewData,
+            getPostMeta: this.getPostMeta,
+            profile: this.profile
+        }
     }
 });
