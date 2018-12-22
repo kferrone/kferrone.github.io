@@ -26,7 +26,7 @@ addons:
     id: 1102279
     enabled: true
 
-  pinterest_analytics:
+  pinterest:
     id: 5dae44c4b9f518f2c932edfd320bd141
     enabled: true
 
