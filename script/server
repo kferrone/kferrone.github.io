@@ -1,3 +1,5 @@
 #!/bin/sh
 
+export JEKYLL_ENV=$1
+
 bundle exec jekyll serve

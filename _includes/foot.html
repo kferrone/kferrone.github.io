@@ -1,24 +1,25 @@
-<script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
+<script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
 
 {% if jekyll.environment == "production" %}
 
-{% if site.google_analytics %}
+{% if site.addons.google_analytics.enabled %}
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    ga('create', '{{ site.google_analytics }}', 'auto');
+    ga('create', '{{ site.addons.google_analytics.id }}', 'auto');
     ga('send', 'pageview');
 </script>
 {% endif %}
 
-{% if site.hubspot %}
+{% if site.addons.hubspot.enabled %}
 <!-- Start of HubSpot Embed Code -->
 <script 
     id="hs-script-loader"
+    src="//js.hs-scripts.com/{{ site.addons.hubspot.id }}.js"
     type="text/javascript"  
-    async defer src="//js.hs-scripts.com/{{ site.hubspot }}.js">
+    async defer>
 </script>
 <!-- End of HubSpot Embed Code -->
 {% endif %}

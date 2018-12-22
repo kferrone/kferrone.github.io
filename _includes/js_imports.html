@@ -35,28 +35,35 @@ crossorigin="anonymous"></script>
 
 {% if jekyll.environment == "production" %}
 
-{% if site.google_tag_manager %}
+{% if site.addons.google_tag_manager.enabled %}
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','{{ site.google_tag_manager }}');</script>
+})(window,document,'script','dataLayer','{{ site.addons.google_tag_manager.id }}');</script>
 <!-- End Google Tag Manager -->
 {% endif %}
 
-{% if site.hotjar %}
-<!-- Hotjar Tracking Code for www.kellyferrone.com -->
+{% if site.addons.hotjar.enabled %}
+<!-- Hotjar Tracking Code -->
 <script>
     (function(h,o,t,j,a,r){
         h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-        h._hjSettings={hjid:{{ site.hotjar }},hjsv:6};
+        h._hjSettings={hjid:{{ site.addons.hotjar.id }},hjsv:6};
         a=o.getElementsByTagName('head')[0];
         r=o.createElement('script');r.async=1;
         r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
         a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
+{% endif %}
+
+{% if site.addons.pinterest_analytics.enabled %}
+<meta 
+    name="p:domain_verify" 
+    content="{{ site.addons.pinterest_analytics.id }}"
+/>
 {% endif %}
 
 {% endif %}

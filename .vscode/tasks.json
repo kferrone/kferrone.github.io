@@ -11,7 +11,12 @@
         {
             "label": "Dev Server",
             "type": "shell",
-            "command": "./script/server"
+            "command": "./script/server development"
+        },
+        {
+            "label": "Prod Server",
+            "type": "shell",
+            "command": "./script/server production"
         }
     ]
 }
