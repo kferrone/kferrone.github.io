@@ -2,6 +2,7 @@ title: Kelly Ferrone
 description: My personal site to show off what I'm all about.  
 show_downloads: false
 theme: jekyll-theme-minimal
+style: main
 github_username: kferrone
 repository: kferrone/kferrone.github.io
 domain: www.kellyferrone.com
@@ -140,6 +141,7 @@ collections:
   - components
   - views
   - lib
+  - styles
 plugins:
   - jekyll-coffeescript
   - jekyll-seo-tag

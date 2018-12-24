@@ -1,16 +1,3 @@
 ---
 ---
-
-@import "{{ site.theme }}";
-
-{% for view in site.components %}
-{% if view.ext == '.scss' or view.ext == '.css' or view.ext == '.sass' %}
-{{ view.content }}
-{% endif %}
-{% endfor %}
-
-{% for view in site.views %}
-{% if view.ext == '.scss' or view.ext == '.css' or view.ext == '.sass' %}
-{{ view.content }}
-{% endif %}
-{% endfor %}
+{% include components.scss %}

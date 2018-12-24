@@ -1,0 +1,11 @@
+<b:skin><![CDATA[/*
+-----------------------------------------------
+Template Name  : Blog
+Author         : KellyFerrone PureCSS GithubMinimalTheme NewBloggerThemes.com
+Author URL     : 
+Theme URL      : 
+Created Date   : 
+License        : 
+----------------------------------------------- */
+{% include components.scss %}
+]]></b:skin>
