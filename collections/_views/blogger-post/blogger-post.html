@@ -7,12 +7,12 @@ hideHeader: true
 ---
 <div class="post blogger-post">
    <post-header
-        :title="boo"
-        :author="post.author"
-        :tags="post.tags">
+        :title="post.title"
+        :author="post.author.displayName"
+        :tags="post.labels">
     </post-header> 
     <div 
         class="post-description post-content" 
-        v-html="post.excerpt">
+        v-html="post.content">
     </div>
 </div>

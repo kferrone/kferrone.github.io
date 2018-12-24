@@ -26,7 +26,7 @@ addons:
 
   hubspot: 
     id: 3962794
-    enabled: false
+    enabled: true
   
   hotjar: 
     id: 1102279

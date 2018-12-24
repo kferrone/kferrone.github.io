@@ -13,8 +13,10 @@ exports.BloggerMixin =
         setBloggerPosts: ->
             @blogger.client.getPosts()
                 .then (response) =>
-                    for post of response.data.items
-                        @posts.push new exports.BloggerPostPreview(post)
+                    for idx,post of response.data.items
+                        bloggerPost = new exports.BloggerPostPreview(post)
+                        console.log("The title is #{bloggerPost.title}")
+                        @posts.push bloggerPost
                 .catch (error) =>
                     console.log('Got an error getting the posts: ', error)
             
