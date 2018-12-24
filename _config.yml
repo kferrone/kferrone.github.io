@@ -18,6 +18,11 @@ addons:
     id: GTM-MVFWXX9
     enabled: true
 
+  blogger:
+    id: '3240227952105036963'
+    key: 'AIzaSyDjJNQ9UsIHdYaeAM02LGMo1LFplKzDddU'
+    enabled: true
+
   hubspot: 
     id: 3962794
     enabled: true

@@ -29,6 +29,11 @@ var vm = new Vue({
         },
         getPostMeta: function (slug) {
             return this.posts.filter((post) => post.slug === slug)[0];
+        },
+        getBlogger: function () {
+            if ('blogger' in this) {
+                return util.getBlogger(this.blogger.id,this.blogger.key);
+            } else return null;
         }
     },
     provide: function() {
@@ -36,6 +41,7 @@ var vm = new Vue({
             getViewList: this.getViewList,
             getViewData: this.getViewData,
             getPostMeta: this.getPostMeta,
+            getBlogger: this.getBlogger,
             profile: this.profile
         }
     }

@@ -1,4 +1,9 @@
+import * as blogger from '/assets/modules/blogger.mjs';
 const axios = window.axios;
+
+export function getBlogger(id,key) {
+    return new blogger.Blogger(id,key);
+}
 
 export async function getBlogPost(category,year,month,day,name) {
     return axios.get(`/${category}/${year}/${month}/${day}/${name}.html`);
@@ -40,3 +45,4 @@ export function getGravatar(email, size) {
 
     return 'https://www.gravatar.com/avatar/' + MD5(email) + '.jpg?s=' + size;
 }
+

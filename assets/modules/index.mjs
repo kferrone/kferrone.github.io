@@ -1,6 +1,7 @@
 ---
 ---
 import * as util from '/assets/modules/util.mjs';
+
 util.getDataModel().then((response) => {
   var dataModel = response.data;
   var moment = window.moment;

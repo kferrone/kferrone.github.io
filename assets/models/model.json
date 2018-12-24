@@ -6,6 +6,9 @@
     "theme": "{{ site.theme }}",
     "domain": "{{ site.domain }}",
     "defaultView": "main",
+    {% if site.addons.blogger.enabled %}
+    "blogger": {{ site.addons.blogger | jsonify }},
+    {% endif %}
     "views": [
         {% assign views = site.views | where:"ext",".html" %}
         {% for view in views %}
