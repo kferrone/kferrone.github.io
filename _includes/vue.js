@@ -6,6 +6,9 @@ var vm = new Vue({
     data: dataModel,
     created: function () {
         util.setTitle(this.getViewData(this.$route.path).title);
+        if (this.blogger.enabled) {
+            this.categories.push('blogger');
+        }
     },
     computed: {
         activeView: function () {
@@ -31,7 +34,7 @@ var vm = new Vue({
             return this.posts.filter((post) => post.slug === slug)[0];
         },
         getBlogger: function () {
-            if ('blogger' in this) {
+            if (this.blogger.enabled) {
                 return util.getBlogger(this.blogger.id,this.blogger.key);
             } else return null;
         }
@@ -41,7 +44,7 @@ var vm = new Vue({
             getViewList: this.getViewList,
             getViewData: this.getViewData,
             getPostMeta: this.getPostMeta,
-            getBlogger: this.getBlogger,
+            blogger: this.getBlogger(),
             profile: this.profile
         }
     }

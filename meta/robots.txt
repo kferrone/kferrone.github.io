@@ -2,5 +2,6 @@
 layout: null
 title : Robots File
 permalink: /robots.txt
+isMeta: true
 ---
 Sitemap: {{ site.url }}/sitemap.xml

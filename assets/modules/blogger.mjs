@@ -1,10 +1,12 @@
 const axios = window.axios;
-const bloggerURL = 'https://www.googleapis.com/blogger/v3';
+const VERSION = 'v3';
+const bloggerURL = `https://www.googleapis.com/blogger/${VERSION}`;
 const BLOGS = 'blogs';
 const USERS = 'users';
 const POSTS = 'posts';
 const PAGES = 'pages';
 const SELF = 'self';
+const COMMENTS = 'comments';
 
 export class Blogger {
     constructor(id, key) {
@@ -33,44 +35,52 @@ export class Blogger {
         return `${endpoint}?${this.keyParam}`;
     }
 
+    get(endpoint) {
+        return axios.get(this.appendKey(endpoint));
+    }
+
     getUser(userID) {
-        return this.blogger(`${this.usersEndpoint}/${userID}`);
+        return this.get(`${this.usersEndpoint}/${userID}`);
     }
 
     getUserBlogs(userID) {
-        return this.blogger(`${this.usersEndpoint}/${userID}/${BLOGS}`);
+        return this.get(`${this.usersEndpoint}/${userID}/${BLOGS}`);
     } 
 
     getMyUser() {
-        return this.blogger(`${this.usersEndpoint}/${SELF}`);
+        return this.get(`${this.usersEndpoint}/${SELF}`);
     }
 
     getMyBlogs() {
-        return this.blogger(`${this.usersEndpoint}/${SELF}/${BLOGS}`);
+        return this.get(`${this.usersEndpoint}/${SELF}/${BLOGS}`);
     }
 
     getBlog() {
-        return this.blogger(this.blogsEndpoint);
+        return this.get(this.blogsEndpoint);
     }
 
     getPosts() {
-        return this.blogger(this.postsEndpoint);
+        return this.get(this.postsEndpoint);
     }
 
-    getPost(id) {
-        return this.blogger(`${this.postsEndpoint}/${id}`);
+    getPost(postID) {
+        return this.get(`${this.postsEndpoint}/${postID}`);
+    }
+
+    getPostComments(postID) {
+        return this.get(`${this.postsEndpoint}/${postID}/${COMMENTS}`);
+    }
+
+    getPostComment(postID,commentID) {
+        return this.get(`${this.postsEndpoint}/${postID}/${COMMENTS}/${commentID}`);
     }
 
     getPages() {
-        return this.blogger(this.pagesEndpoint);
+        return this.get(this.pagesEndpoint);
     }
 
     getPage(id) {
-        return this.blogger(`${this.pagesEndpoint}/${id}`);
-    }
-
-    blogger(endpoint) {
-        return axios.get(this.appendKey(endpoint));
+        return this.get(`${this.pagesEndpoint}/${id}`);
     } 
 }
 

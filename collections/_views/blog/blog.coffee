@@ -7,13 +7,10 @@ routes.push
         tag: null
     component: Vue.component('blog',
         template: '#blog'
-        inject: ['getBlogger']
+        inject: ['blogger']
         created: ->
-            @blogger = @getBlogger()
             @getBloggerMeta()
             @getBloggerPosts()
-        data: ->
-            blogger: Object
         computed:
             posts: ->
                 if @$route.query.category?

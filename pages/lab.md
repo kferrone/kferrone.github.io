@@ -41,7 +41,11 @@ So here we go.
 ### Looping Through Pages Collection
 
 {% for page in site.pages %}
-  <p>{{ page.title }} </p>
+{% unless page.isMeta %}
+{% if page.title %}
+  <p>Page: {{ page.title }} - ID: {{ page.permalink }} </p>
+{% endif %}
+{% endunless %}
 {% endfor %}
 
 ### List of Static Files
@@ -88,13 +92,13 @@ So here we go.
   <p>Totally Sick dude!</p>
 </test-blog-post>
 
-<blog-post 
+<blog-preview 
   title="I am a VueJS Component blog title"
   href="/technology/2018/11/04/StartingWithJekyll">
   <template slot="excerpt">
     I guess this could be the excerpt. If clicked, will I be replaced with blog content?
   </template>
-</blog-post>
+</blog-preview>
 
 ### Getting Values From Site
 

@@ -2,6 +2,7 @@
 layout: null
 title : Site Map
 permalink: /sitemap.xml
+isMeta: true
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset 
