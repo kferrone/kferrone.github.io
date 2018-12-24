@@ -6,7 +6,7 @@ routes.push
         template: '#blogger'
         inject: ['blogger']
         data: ->
-            content: String
+            post: Object
         created: ->
             @setPostContent()
         computed:
@@ -15,7 +15,7 @@ routes.push
         methods:
             setPostContent: ->
                 @blogger.getPost(@postID).then(
-                    (response) => console.log(response)
+                    (response) => @post = response.data
                 )
                     
     )

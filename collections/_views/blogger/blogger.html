@@ -7,11 +7,12 @@ hideHeader: true
 ---
 <div class="post">
    <post-header
-        title="Blogger"
-        author="Kelly">
+        :title="post.title"
+        :author="post.author.displayName"
+        :categories="post.labels">
     </post-header> 
     <div 
         class="post-description post-content" 
-        v-html="content">
+        v-html="post.content">
     </div>
 </div>
