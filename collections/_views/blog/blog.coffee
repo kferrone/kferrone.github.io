@@ -7,10 +7,7 @@ routes.push
         tag: null
     component: Vue.component('blog',
         template: '#blog'
-        inject: ['blogger']
-        created: ->
-            @getBloggerMeta()
-            @getBloggerPosts()
+        inject: ['getPostList']
         computed:
             posts: ->
                 if @$route.query.category?
@@ -18,26 +15,11 @@ routes.push
                 else if @$route.query.tag?
                     @getPostsByTag(@$route.query.tag)
                 else
-                    @getPosts()
+                    @getPostList()
         methods:
-            getPosts: ->
-                @$root.$data.posts
             getPostsByCategory: (category) ->
-                @getPosts().filter((post) -> category in post.categories)
+                @getPostList().filter((post) -> category in post.categories)
             getPostsByTag: (tag) ->
-                @getPosts().filter((post) -> tag in post.tags)
-            getBloggerMeta: ->
-                @blogger.getBlog()
-                    .then((response) =>
-                        console.log('Got some blogs: ', response)
-                    ).catch((error) =>
-                        console.log('Got an error getting the blogs: ', error)
-                    )
-            getBloggerPosts: ->
-                @blogger.getPosts()
-                .then((response) =>
-                    console.log('Got some posts: ', response)
-                ).catch((error) =>
-                    console.log('Got an error getting the posts: ', error)
-                )
+                @getPostList().filter((post) -> tag in post.tags)
+            
     )

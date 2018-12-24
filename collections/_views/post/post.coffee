@@ -4,6 +4,7 @@ routes.push
     path: '/post/:slug'
     component: Vue.component('post',
         template: '#post'
+        inject: ['getPostMeta']
         data: ->
             content: String
         created: ->
@@ -11,7 +12,7 @@ routes.push
             util.appendToTitle(" | #{@post.title}")
         computed:
             post: ->
-                @$root.getPostMeta(@$route.params.slug)
+                @getPostMeta(@$route.params.slug)
         watch:
             content: () ->
                 util.appendToTitle(" | #{post.title}")

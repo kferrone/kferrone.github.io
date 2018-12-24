@@ -3,15 +3,21 @@ var vm = new Vue({
     router: new VueRouter({
         routes
     }),
+    mixins: [
+        exports.BloggerMixin
+    ],
     data: dataModel,
-    created: function () {
+    created: function() {
         util.setTitle(this.getViewData(this.$route.path).title);
         if (this.blogger.enabled) {
             this.categories.push('blogger');
         }
+        this.setBloggerClient();
+        this.setBloggerMeta();
+        this.setBloggerPosts();
     },
     computed: {
-        activeView: function () {
+        activeView: function() {
             return this.getViewData(this.$route.path);
         }
     },
@@ -21,22 +27,21 @@ var vm = new Vue({
         }
     },
     methods: {
-        getViewList: function () {
+        getViewList: function() {
             return this.views
                 .filter(view => view.order != 0 && !view.draft)
                 .sort((a, b) => a.order - b.order);
         },
-        getViewData: function (path) {
+        getPostList: function() {
+            return this.posts
+                .sort((a, b) => a.date - b.date);
+        },
+        getViewData: function(path) {
             path = (path == '/') ? '/home' : path;
             return this.views.filter((view) => path.includes(view.permalink))[0];
         },
-        getPostMeta: function (slug) {
+        getPostMeta: function(slug) {
             return this.posts.filter((post) => post.slug === slug)[0];
-        },
-        getBlogger: function () {
-            if (this.blogger.enabled) {
-                return util.getBlogger(this.blogger.id,this.blogger.key);
-            } else return null;
         }
     },
     provide: function() {
@@ -44,7 +49,8 @@ var vm = new Vue({
             getViewList: this.getViewList,
             getViewData: this.getViewData,
             getPostMeta: this.getPostMeta,
-            blogger: this.getBlogger(),
+            getPostList: this.getPostList,
+            blogger: this.blogger,
             profile: this.profile
         }
     }

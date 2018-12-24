@@ -9,11 +9,15 @@ Vue.component('blog-preview',
         id: String
         tags: Array
         categories: Array
+        heritage: String
     data: ->
         hidden: false
         content: ''
         loaded: false
     computed:
         linker: ->
-            return '/post/' + @slug
+            if @heritage == 'blogger'
+                return @id
+            else
+                return '/post/' + @slug
 )
