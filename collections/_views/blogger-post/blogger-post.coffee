@@ -4,15 +4,15 @@ routes.push
     path: '/blogger/:id'
     component: Vue.component('blogger-post',
         template: '#blogger-post'
-        inject: ['blogger']
-        data: ->
-            post: Object
+        inject: ['blogger','getPostMeta']
         created: ->
-            @setPostContent()
             @$parent.hideHeader = true;
         computed:
-            postID: ->
-                @$route.params.id
+            post: ->
+                @getPostMeta(@$route.params.id)
+        watch:
+            content: () ->
+                util.appendToTitle(" | #{post.title}")
         methods:
             setPostContent: ->
                 @blogger.client.getPost(@postID).then(
