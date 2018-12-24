@@ -4,6 +4,7 @@ const BLOGS = 'blogs';
 const USERS = 'users';
 const POSTS = 'posts';
 const PAGES = 'pages';
+const SELF = 'self';
 
 export class Blogger {
     constructor(id, key) {
@@ -30,6 +31,22 @@ export class Blogger {
 
     appendKey(endpoint) {
         return `${endpoint}?${this.keyParam}`;
+    }
+
+    getUser(userID) {
+        return this.blogger(`${this.usersEndpoint}/${userID}`);
+    }
+
+    getUserBlogs(userID) {
+        return this.blogger(`${this.usersEndpoint}/${userID}/${BLOGS}`);
+    } 
+
+    getMyUser() {
+        return this.blogger(`${this.usersEndpoint}/${SELF}`);
+    }
+
+    getMyBlogs() {
+        return this.blogger(`${this.usersEndpoint}/${SELF}/${BLOGS}`);
     }
 
     getBlog() {
