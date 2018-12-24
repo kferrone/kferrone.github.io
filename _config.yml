@@ -20,13 +20,13 @@ addons:
 
   blogger:
     id: '3240227952105036963'
-    # key: 'AIzaSyDjJNQ9UsIHdYaeAM02LGMo1LFplKzDddU'
-    key: 'AIzaSyAHcSA1ZNS57kjqT-7CF1OSANb8C5PF0Z8'
+    key: 'AIzaSyDjJNQ9UsIHdYaeAM02LGMo1LFplKzDddU'
+    #key: 'AIzaSyAHcSA1ZNS57kjqT-7CF1OSANb8C5PF0Z8'
     enabled: true
 
   hubspot: 
     id: 3962794
-    enabled: true
+    enabled: false
   
   hotjar: 
     id: 1102279
