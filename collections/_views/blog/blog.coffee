@@ -10,12 +10,8 @@ routes.push
         inject: ['getBlogger']
         created: ->
             @blogger = @getBlogger()
-            @blogger.getBlog()
-                .then((response) =>
-                    console.log('Got some blogs: ', response)
-                ).catch((error) =>
-                    console.log('Got an error getting the blogs: ', error)
-                )
+            @getBloggerMeta()
+            @getBloggerPosts()
         data: ->
             blogger: Object
         computed:
@@ -33,4 +29,18 @@ routes.push
                 @getPosts().filter((post) -> category in post.categories)
             getPostsByTag: (tag) ->
                 @getPosts().filter((post) -> tag in post.tags)
+            getBloggerMeta: ->
+                @blogger.getBlog()
+                    .then((response) =>
+                        console.log('Got some blogs: ', response)
+                    ).catch((error) =>
+                        console.log('Got an error getting the blogs: ', error)
+                    )
+            getBloggerPosts: ->
+                @blogger.getPosts()
+                .then((response) =>
+                    console.log('Got some posts: ', response)
+                ).catch((error) =>
+                    console.log('Got an error getting the posts: ', error)
+                )
     )
