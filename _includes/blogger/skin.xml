@@ -7,5 +7,5 @@ Theme URL      :
 Created Date   : 
 License        : 
 ----------------------------------------------- */
-{% include components.scss %}
+{% include collections.scss %}
 ]]></b:skin>

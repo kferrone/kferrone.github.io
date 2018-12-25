@@ -1,0 +1,5 @@
+{%- for view in site[include.collection] -%}
+{%- if view.ext == '.scss' or view.ext == '.css' or view.ext == '.sass' -%}
+{{- view.content | normalize_whitespace | strip -}}
+{%- endif -%}
+{%- endfor -%}
