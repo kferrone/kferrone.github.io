@@ -1,0 +1,20 @@
+---
+type: section
+---
+<section class='subscribe-section-container'>
+	<button class='subscribe-button pill-button'>
+		<b:eval expr='data:messages.subscribe' />
+	</button>
+	<div class='subscribe-popup-container'>
+		<div aria-labelledby='subscribe-title'
+			class='subscribe-popup dialog hidden' role='dialog' tabindex='-1'>
+			<div role='document'>
+				<h3 class='subscribe-title' id='subscribe-title'>
+					<b:eval expr='data:messages.subscribeToThisBlog' />
+				</h3>
+				{% include blogger/section.xml slug='subscriptions' %}
+			</div>
+		</div>
+	</div>
+</section>
+			

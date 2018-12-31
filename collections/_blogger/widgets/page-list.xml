@@ -1,0 +1,65 @@
+---
+type: widget
+---
+<b:widget id='PageList1' title='' cond='!data:view.isPost'
+	locked='true' type='PageList' visible='true'>
+	<b:widget-settings>
+		<b:widget-setting name='pageListJson'><![CDATA[{'home': {'href': 'https://blog.kellyferrone.com/', 'title': 'Home', 'position': 0}, '6049028714660494938': {'href': 'https://blog.kellyferrone.com/p/codes.html', 'title': 'Codes', 'position': 1}}]]></b:widget-setting>
+		<b:widget-setting name='homeTitle'>Home</b:widget-setting>
+	</b:widget-settings>
+	<b:includable id='main'>
+		<b:include name='widget-title' />
+		<b:include name='content' />
+	</b:includable>
+	<b:includable id='content'>
+		<div class='widget-content'>
+			<b:include
+				cond='data:widget.sectionId == &quot;page_list_top&quot;'
+				name='overflowablePageList' />
+			<b:include
+				cond='data:widget.sectionId != &quot;page_list_top&quot;'
+				name='pageList' />
+		</div>
+	</b:includable>
+	<b:includable id='overflowButton'>
+		<a>
+			<data:messages.moreEllipsis />
+		</a>
+	</b:includable>
+	<b:includable id='overflowablePageList'>
+		<div class='overflowable-container'>
+			<div class='overflowable-contents'>
+				<div class='container'>
+					<b:with value='true' var='overflow'>
+						<b:with value='&quot;tabs&quot;' var='pageListClass'>
+							<b:include name='pageList' />
+						</b:with>
+					</b:with>
+				</div>
+			</div>
+			<div class='overflow-button hidden'>
+				<b:include name='overflowButton' />
+			</div>
+		</div>
+	</b:includable>
+	<b:includable id='pageLink'>
+		<li>
+			<b:class cond='data:overflow' name='overflowable-item' />
+			<b:class cond='data:link.isCurrentPage' name='selected' />
+
+			<a expr:href='data:link.href'>
+				<data:link.title />
+			</a>
+		</li>
+	</b:includable>
+	<b:includable id='pageList'>
+		<ul>
+			<b:class cond='data:pageListClass'
+				expr:name='data:pageListClass' />
+			<b:loop values='data:links' var='link'>
+				<b:include name='pageLink' />
+			</b:loop>
+		</ul>
+	</b:includable>
+</b:widget>
+	

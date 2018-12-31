@@ -2,3 +2,5 @@
 title: main theme
 ---
 @import "{{ site.theme }}";
+{% include collection.scss collection='components' %}
+{% include collection.scss collection='views' %}

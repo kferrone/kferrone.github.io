@@ -1,0 +1,112 @@
+---
+type: widget
+---
+<b:widget id='FeaturedPost1' cond='data:view.isHomepage'
+	locked='true' title='' type='FeaturedPost' visible='true'>
+	<b:widget-settings>
+		<b:widget-setting name='showSnippet'>true</b:widget-setting>
+		<b:widget-setting name='showPostTitle'>true</b:widget-setting>
+		<b:widget-setting name='showFirstImage'>true</b:widget-setting>
+		<b:widget-setting name='useMostRecentPost'>true</b:widget-setting>
+	</b:widget-settings>
+	<b:includable id='main' var='this'>
+		<b:include name='widget-title' />
+		<div class='widget-content'>
+			<b:include name='snippetedPosts' />
+		</div>
+	</b:includable>
+	<b:includable id='commentsLink'>
+		<a class='comment-link' expr:href='data:post.commentsUrl'
+			expr:onclick='data:post.commentsUrlOnclick'>
+			<b:include data='{ iconClass: &quot;touch-icon&quot; }'
+				name='commentIcon' />
+			<span class='num_comments'>
+				<b:if cond='data:post.numberOfComments &gt; 0'>
+					<b:message name='messages.numberOfComments'>
+						<b:param expr:value='data:post.numberOfComments'
+							name='numComments' />
+					</b:message>
+					<b:else />
+					<data:messages.postAComment />
+				</b:if>
+			</span>
+		</a>
+	</b:includable>
+	<b:includable id='headerByline'>
+		<b:include
+			cond='data:view.isMultipleItems or data:widgets.Blog.first.headerByline.items.share'
+			data='{ shareButtonClass: &quot;post-share-buttons-top&quot;, overridden: true }'
+			name='maybeAddShareButtons' />
+		<b:include name='super.headerByline' />
+	</b:includable>
+	<b:includable id='postFooter' var='post'>
+		<div class='post-bottom'>
+			<div class='post-footer float-container'>
+				<b:include name='footerBylines' />
+				<b:include cond='data:widget.type == &quot;Blog&quot;'
+					data='post' name='postFooterAuthorProfile' />
+			</div>
+			<b:if cond='data:view.isSingleItem'>
+				<b:include
+					data='{ shareButtonClass: &quot;post-share-buttons-bottom invisible&quot;, overridden: true }'
+					name='maybeAddShareButtons' />
+				<b:else />
+				<b:include data='post' name='postFooterJumpLink' />
+			</b:if>
+		</div>
+	</b:includable>
+	<b:includable id='postFooterJumpLink'>
+		<b:comment>Ripple, and show &#39;keep reading&#39; as the
+			default.</b:comment>
+		<div class='jump-link flat-button ripple'>
+			<a
+				expr:href='data:post.hasJumpLink ? data:post.url fragment &quot;more&quot; : data:post.url'
+				expr:title='data:post.title'>
+				<data:blog.jumpLinkMessage />
+			</a>
+		</div>
+	</b:includable>
+	<b:includable id='postJumpLink'>
+		<b:comment>Overridden, and migrated to postFooter. Called as
+			postFooterJumpLink.</b:comment>
+	</b:includable>
+	<b:includable id='postLabels'>
+		<b:comment>We don&#39;t display labels on the home page.</b:comment>
+		<b:if
+			cond='data:view.isSingleItem and data:widget.type == &quot;Blog&quot;'>
+			<b:include name='super.postLabels' />
+		</b:if>
+	</b:includable>
+	<b:includable id='postShareButtons' var='post'>
+		<b:comment>We call super.postShareButtons from the migrated
+			positions.</b:comment>
+	</b:includable>
+	<b:includable id='snippetedPostByline'>
+		<b:include name='headerByline' />
+	</b:includable>
+	<b:includable id='snippetedPostContent'>
+		<b:comment>Re-order the thumbnail before the snippet, add
+			&#39;Keep reading&#39; link.</b:comment>
+		<b:include cond='data:this.postDisplay.showTitle'
+			name='snippetedPostTitle' />
+		<b:include name='headerByline' />
+		<b:include
+			cond='data:this.postDisplay.showFeaturedImage and data:post.featuredImage'
+			data='post' name='snippetedPostThumbnail' />
+		<b:include cond='data:this.postDisplay.showSnippet'
+			data='post' name='postSnippet' />
+		<b:include data='post' name='postFooter' />
+	</b:includable>
+	<b:includable id='snippetedPostThumbnail'>
+		<div class='snippet-thumbnail'>
+			<b:with
+				value='data:post.featuredImage.isYoutube                            ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl, 945, &quot;945:600&quot;)                            : &quot;&quot;'
+				var='highRes'>
+				<b:include
+					data='{                                  image: data:post.featuredImage,                                  imageSizes: [256, 512, 945, 1684],                                  imageRatio: &quot;945:600&quot;,                                  sourceSizes: &quot;(min-width: 954px) 842px, (min-width: 801px) calc(100vw - 112px), calc(100vw - 64px)&quot;,                                  enhancedSourceset: data:highRes                                }'
+					name='responsiveImage' />
+			</b:with>
+		</div>
+	</b:includable>
+</b:widget>
+		

@@ -142,6 +142,7 @@ collections:
   - views
   - lib
   - styles
+  - blogger
 plugins:
   - jekyll-coffeescript
   - jekyll-seo-tag

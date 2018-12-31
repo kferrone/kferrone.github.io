@@ -1,0 +1,7 @@
+---
+type: section
+---
+<b:section class='clearboth' id='page_list_top'
+    name='Page List (Top)' showaddelement='false'>
+    {% include blogger/widget.xml slug='page-list' %}
+</b:section>

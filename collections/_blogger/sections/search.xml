@@ -1,0 +1,7 @@
+---
+type: section
+---
+<b:section id='search_top' name='Search (Top)'
+	showaddelement='false'>
+    {% include blogger/widget.xml slug='BlogSearch' %}
+</b:section>

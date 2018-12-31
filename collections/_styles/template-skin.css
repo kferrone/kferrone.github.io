@@ -1,0 +1,34 @@
+---
+---
+body#layout .hidden,
+body#layout .invisible {
+    display: inherit;
+}
+
+body#layout .navigation {
+    display: none;
+}
+
+body#layout .page,
+body#layout .sidebar_top,
+body#layout .sidebar_bottom {
+    display: inline-block;
+    left: inherit;
+    position: relative;
+    vertical-align: top;
+}
+
+body#layout .page {
+    float: right;
+    margin-left: 20px;
+    width: 55%;
+}
+
+body#layout .sidebar-container {
+    float: right;
+    width: 40%;
+}
+
+body#layout .hamburger-menu {
+    display: none;
+}

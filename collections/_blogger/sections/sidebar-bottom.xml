@@ -1,0 +1,16 @@
+---
+type: section
+---
+<b:section class='sidebar_bottom' id='sidebar_bottom'
+	name='Sidebar (Bottom)' preferred='yes'>
+	
+	{% include blogger/widget.xml slug='BlogArchive' %}
+	
+	{% include blogger/widget.xml slug='labels' %}
+	
+	{% include blogger/widget.xml slug='ReportAbuse' %}
+	
+	{% include blogger/widget.xml slug='About' %}
+	
+	{% include blogger/widget.xml slug='blogroll' %}
+</b:section>

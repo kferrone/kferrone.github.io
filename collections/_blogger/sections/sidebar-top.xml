@@ -1,0 +1,7 @@
+---
+type: section
+---
+<b:section class='sidebar_top' id='sidebar_top'
+	name='Sidebar (Top)'>
+	{% include blogger/widget.xml slug='profile' %}
+</b:section>

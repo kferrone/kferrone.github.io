@@ -1,0 +1,15 @@
+---
+type: widget
+---
+<b:widget id='HTML3' locked='false' title='About' type='HTML'
+	visible='false'>
+	<b:widget-settings>
+		<b:widget-setting name='content' />
+	</b:widget-settings>
+	<b:includable id='main'>
+		<b:include name='widget-title' />
+		<div class='widget-content'>
+			<data:content />
+		</div>
+	</b:includable>
+</b:widget>

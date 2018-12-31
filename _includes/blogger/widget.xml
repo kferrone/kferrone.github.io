@@ -1,0 +1,2 @@
+{% assign widgets = site.blogger | where: "type","widget" %}
+{{ widgets | where:"slug",include.slug }}

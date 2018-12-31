@@ -1,0 +1,7 @@
+---
+type: section
+---
+<b:section id='subscription' name='Subscription'
+	showaddelement='false'>
+	{% include blogger/widget.xml slug='FollowByEmail' %}
+</b:section>

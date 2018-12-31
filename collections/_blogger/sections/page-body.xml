@@ -1,0 +1,14 @@
+---
+type: section
+---
+<b:section 
+    id='page_body'
+    name='Page Body' 
+    class='main' 
+    showaddelement='false'>
+    {% include blogger/widget.xml slug='featured-post' %}
+    
+    {% include blogger/widget.xml slug='blog' %}
+    
+    {% include blogger/widget.xml slug='popular-posts' %}
+</b:section>

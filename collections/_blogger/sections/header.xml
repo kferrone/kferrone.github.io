@@ -1,0 +1,7 @@
+---
+type: section
+---
+<b:section id='header' class='container' name='Header'
+	showaddelement='false'>
+	{% include blogger/widget.xml slug='header' %}
+</b:section>

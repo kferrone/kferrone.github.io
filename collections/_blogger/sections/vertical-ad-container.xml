@@ -1,0 +1,15 @@
+---
+type: section
+---
+<b:section 
+	id='ads' 
+	name='Ads' 
+	class='vertical-ad-container' 
+	ads='true' 
+	showaddelement='false'>
+	
+	{% include blogger/widget.xml slug='Adsense-1' %}
+	
+	{% include blogger/widget.xml slug='Adsense-2' %}
+	
+</b:section>
