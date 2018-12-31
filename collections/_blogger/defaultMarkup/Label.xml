@@ -1,0 +1,21 @@
+---
+type: defaultMarkup
+---
+<b:defaultmarkup type='Label'>
+    <b:includable id='main' var='this'>
+        <details class='collapsible extendable'>
+            <b:attr cond='data:view.isLabelSearch' name='open' value='open'/>
+            <b:with value='true' var='renderAsDetails'>
+                <b:with value='data:messages.labels' var='defaultTitle'>
+                    <b:include name='super.main'/>
+                </b:with>
+            </b:with>
+        </details>
+    </b:includable>
+    <b:includable id='list'>
+        <b:include data='{                               buttonClass: &quot;pill-button&quot;,                               items: data:this.labels,                               itemSet: &quot;labels&quot;,                               itemsMarkup: &quot;super.list&quot;                             }' name='extendableItems'/>
+    </b:includable>
+    <b:includable id='cloud'>
+        <b:include data='{                               buttonClass: &quot;pill-button&quot;,                               items: data:this.labels,                               itemSet: &quot;labels&quot;,                               itemsMarkup: &quot;super.cloud&quot;                             }' name='extendableItems'/>
+    </b:includable>
+</b:defaultmarkup>

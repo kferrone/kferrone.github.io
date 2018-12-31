@@ -1,0 +1,38 @@
+---
+type: defaultMarkup
+---
+<b:defaultmarkup type='Profile'>
+    <b:includable id='main' var='this'>
+        <div class='wrapper'>
+            <b:class cond='!data:this.team' name='solo'/>
+            <b:comment>
+             No title for single profiles. Default to &#39;Blog authors&#39; for team.
+            </b:comment>
+            <b:with value='data:messages.blogAuthors' var='defaultTitle'>
+                <b:include cond='data:this.team' name='widget-title'/>
+            </b:with>
+            <b:include name='content'/>
+        </div>
+    </b:includable>
+    <b:includable id='defaultProfileImage'>
+        <div class='default-avatar-wrapper'>
+            <b:include data='{ iconClass: &quot;avatar-icon&quot; }' name='defaultAvatarIcon'/>
+        </div>
+    </b:includable>
+    <b:includable id='userProfileText'>
+        <dd class='profile-textblock profile-snippet snippet-container r-snippet-container'>
+            <div class='snippet-item r-snippetized'>
+                <data:aboutme/>
+            </div>
+            <div class='snippet-fade r-snippet-fade hidden'/>
+        </dd>
+    </b:includable>
+    <b:includable id='viewProfileLink'>
+        <b:comment>
+           Change link to &#39;visit profile&#39;
+        </b:comment>
+        <a class='profile-link visit-profile pill-button' expr:href='data:userUrl' rel='author'>
+            <data:messages.visitProfile/>
+        </a>
+    </b:includable>
+</b:defaultmarkup>

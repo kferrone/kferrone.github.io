@@ -1,0 +1,62 @@
+---
+type: defaultMarkup
+---
+<b:defaultmarkup type='Blog'>
+    <b:includable id='main'>
+        <b:include name='noContentPlaceholder'/>
+        <b:comment>
+           Cap the total number of ads (widgets and inline ads).
+        </b:comment>
+        <b:with value='3' var='maxNumAds'>
+            <b:with value='data:widgets.AdSense.size' var='numDesktopAds'>
+                <b:with value='data:widgets.AdSense count (w =&gt; w.sectionId != &quot;ads&quot;)' var='numMobileAds'>
+                    <b:comment>
+                 Filter out the featured post, but only on the homepage.
+                    </b:comment>
+                    <b:with value='data:widgets.FeaturedPost filter (w =&gt; w.sectionId == &quot;page_body&quot;) map (w =&gt; w.postId)' var='featuredPostIds'>
+                        <b:with value='data:view.isHomepage                                          ? data:posts filter (post =&gt; post.id not in data:featuredPostIds)                                          : data:posts' var='posts'>
+                            <b:include name='super.main'/>
+                        </b:with>
+                    </b:with>
+                </b:with>
+            </b:with>
+        </b:with>
+    </b:includable>
+    <b:includable id='feedLinks'>
+        <b:comment>
+           Don&#39;t show feed links.
+        </b:comment>
+    </b:includable>
+    <b:includable id='postBodySnippet' var='post'>
+        <div class='container post-body entry-content' expr:id='&quot;post-snippet-&quot; + data:post.id'>
+            <b:if cond='data:post.featuredImage'>
+                <div class='snippet-thumbnail'>
+                    <b:include data='{                                     image: data:post.featuredImage,                                     imageSizes: [32, 64, 128, 256],                                     imageRatio: &quot;1:1&quot;,                                     sourceSizes: &quot;(max-width: 800px) 20vw, 128px&quot;                                  }' name='responsiveImage'/>
+                </div>
+            </b:if>
+            <b:include cond='data:post' data='post' name='postSnippet'/>
+        </div>
+    </b:includable>
+    <b:includable id='previousPageLink'>
+        <b:comment>
+           Don&#39;t show
+        </b:comment>
+    </b:includable>
+    <b:includable id='homePageLink'>
+        <b:comment>
+           Don&#39;t show
+        </b:comment>
+    </b:includable>
+    <b:includable id='nextPageLink'>
+        <a class='blog-pager-older-link flat-button ripple' expr:href='data:olderPageUrl' expr:title='data:messages.morePosts'>
+            <data:messages.morePosts/>
+        </a>
+    </b:includable>
+    <b:includable id='inlineAd' var='post'>
+        <div>
+            <b:class cond='data:post.adNumber + data:numDesktopAds lt data:maxNumAds' name='desktop-ad'/>
+            <b:class cond='data:post.adNumber + data:numMobileAds lt data:maxNumAds' name='mobile-ad'/>
+            <b:include data='post' name='super.inlineAd'/>
+        </div>
+    </b:includable>
+</b:defaultmarkup>

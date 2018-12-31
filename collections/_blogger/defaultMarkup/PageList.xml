@@ -1,0 +1,16 @@
+---
+type: defaultMarkup
+---
+<b:defaultmarkup type='PageList'>
+    <b:includable id='content'>
+        <div class='widget-content'>
+            <b:include cond='data:widget.sectionId == &quot;page_list_top&quot;' name='overflowablePageList'/>
+            <b:include cond='data:widget.sectionId != &quot;page_list_top&quot;' name='pageList'/>
+        </div>
+    </b:includable>
+    <b:includable id='overflowButton'>
+        <a>
+            <data:messages.moreEllipsis/>
+        </a>
+    </b:includable>
+</b:defaultmarkup>

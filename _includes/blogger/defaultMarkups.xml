@@ -1,0 +1,3 @@
+<b:defaultmarkups>
+{{ site.blogger | where: "type","defaultMarkup" }}
+</b:defaultmarkups>

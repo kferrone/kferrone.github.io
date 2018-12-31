@@ -1,0 +1,8 @@
+---
+type: defaultMarkup
+---
+<b:defaultmarkup type='BlogSearch'>
+    <b:includable id='searchSubmit'>
+        <input class='search-action flat-button' expr:value='data:messages.search.escaped' type='submit'/>
+    </b:includable>
+</b:defaultmarkup>

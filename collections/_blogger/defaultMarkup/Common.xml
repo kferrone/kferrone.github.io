@@ -1,0 +1,16 @@
+---
+type: defaultMarkup
+---
+<b:defaultmarkup type='Common'>
+    <b:includable id='widgetNotAvailableInPreview'>
+        <b:if cond='data:widget.type == &quot;AdSense&quot;'>
+            <div class='vertical-ad-placeholder'>
+                <span>
+                    <b:message name='messages.adsGoHere'/>
+                </span>
+            </div>
+            <b:else/>
+            <b:include name='super.widgetNotAvailableInPreview'/>
+        </b:if>
+    </b:includable>
+</b:defaultmarkup>

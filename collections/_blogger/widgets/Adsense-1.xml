@@ -1,7 +1,11 @@
 ---
 type: widget
 ---
-<b:widget id='AdSense1' locked='true' title='' type='AdSense'
+<b:widget 
+	id='AdSense1' 
+	title=''
+	type='AdSense'
+	locked='true'  
 	visible='true'>
 	<b:includable id='main'>
 		<div class='widget-content'>

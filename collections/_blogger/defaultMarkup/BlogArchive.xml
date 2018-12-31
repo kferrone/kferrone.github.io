@@ -1,0 +1,21 @@
+---
+type: defaultMarkup
+---
+<b:defaultmarkup type='BlogArchive'>
+    <b:includable id='main' var='this'>
+        <details class='collapsible extendable'>
+            <b:attr cond='data:view.isArchive' name='open' value='open'/>
+            <b:with value='true' var='renderAsDetails'>
+                <b:with value='data:messages.archive' var='defaultTitle'>
+                    <b:include name='super.main'/>
+                </b:with>
+            </b:with>
+        </details>
+    </b:includable>
+    <b:includable id='flat'>
+        <b:include data='{                               buttonClass: &quot;pill-button&quot;,                               items: data:this.data,                               itemSet: &quot;data&quot;,                               itemsMarkup: &quot;super.flat&quot;                             }' name='extendableItems'/>
+    </b:includable>
+    <b:includable id='hierarchy'>
+        <b:include data='{                               buttonClass: &quot;pill-button&quot;,                               limit: 1,                               items: data:this.data,                               itemSet: &quot;data&quot;,                               itemsMarkup: &quot;super.hierarchy&quot;                             }' name='extendableItems'/>
+    </b:includable>
+</b:defaultmarkup>

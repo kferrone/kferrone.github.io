@@ -1,0 +1,9 @@
+---
+type: defaultMarkup
+---
+<b:defaultmarkup type='Blog,FeaturedPost'>
+    <b:includable id='headerByline'>
+        <b:include cond='data:view.isMultipleItems or data:widgets.Blog.first.headerByline.items.share' data='{ shareButtonClass: &quot;post-share-buttons-top&quot;, overridden: true }' name='maybeAddShareButtons'/>
+        <b:include name='super.headerByline'/>
+    </b:includable>
+</b:defaultmarkup>

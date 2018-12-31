@@ -1,0 +1,18 @@
+---
+type: defaultMarkup
+---
+<b:defaultmarkup type='Header'>
+    <b:includable id='image'>
+        <b:include name='super.image'/>
+        <b:comment>
+           If we are replacing the title, force it to render anyway, and it&#39;ll be hidden in CSS.
+        </b:comment>
+        <b:include cond='data:this.imagePlacement == &quot;REPLACE&quot;' name='title'/>
+    </b:includable>
+    <b:includable id='title'>
+        <div>
+            <b:class cond='data:this.imagePlacement == &quot;REPLACE&quot;' name='replaced'/>
+            <b:include name='super.title'/>
+        </div>
+    </b:includable>
+</b:defaultmarkup>
