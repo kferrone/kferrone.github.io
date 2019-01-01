@@ -1,15 +1,31 @@
-@api_key = 288811369362-338dnkd1pk76vds4jnl8mkp7fh1p12vv.apps.googleusercontent.com
-@url = https://www.googleapis.com/blogger/v3
+@api_key = AIzaSyAHcSA1ZNS57kjqT-7CF1OSANb8C5PF0Z8
+@blogger_url = https://www.googleapis.com/blogger/v3
+@url = http://localhost:4000
 @blog_id = 3240227952105036963
+@blogs = {{blogger_url}}/blogs/{{blog_id}}
+@posts = {{blogs}}/posts
+@pages = {{blogs}}/pages
+
+### Get the blog meta data
+GET {{blogs}}?key={{api_key}}
 
 ### Get the posts
-GET {{url}}/blogs/{{blog_id}}/posts?key={{api_key}}
+GET {{posts}}?key={{api_key}}
 
-### try this one
-GET https://www.googleapis.com/blogger/v3/blogs/3240227952105036963?key=288811369362-338dnkd1pk76vds4jnl8mkp7fh1p12vv.apps.googleusercontent.com
+### Get the pages
+GET {{pages}}?key={{api_key}}
 
 ### rss feed of mine
-GET http://localhost:4000/rss.xml
+GET {{url}}/rss.xml
 
 ### atom feed of mine
-GET http://localhost:4000/atom.xml
+GET {{url}}/atom.xml
+
+### sitemap of mine
+GET {{url}}/sitemap.xml
+
+### blogger theme of mine
+GET {{url}}/bloggerTheme.xml
+
+### view the built model
+GET {{url}}/assets/models/model.json

@@ -29,6 +29,7 @@ addons:
 
   blogger:
     id: '3240227952105036963'
+    url: blog.kellyferrone.com
     key: 'AIzaSyDjJNQ9UsIHdYaeAM02LGMo1LFplKzDddU'
     #key: 'AIzaSyAHcSA1ZNS57kjqT-7CF1OSANb8C5PF0Z8'
     enabled: true
@@ -166,5 +167,6 @@ exclude: [
   'README.md',
   'LICENSE',
   'codealike.json',
-  '.DS_Store'
+  '.DS_Store',
+  'wiki'
 ]
