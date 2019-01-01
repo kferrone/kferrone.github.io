@@ -1,18 +1,11 @@
 {%- if jekyll.environment == "development" -%}
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
-<html 
-    b:css='false' 
-    b:defaultwidgetversion='2' 
-    b:layoutsVersion='3' 
-    b:responsive='true' 
-    b:templateUrl='indie.xml' 
-    b:templateVersion='1.3.0' 
-    expr:dir='data:blog.languageDirection' 
-    xmlns='http://www.w3.org/1999/xhtml' 
-    xmlns:b='http://www.google.com/2005/gml/b' 
-    xmlns:data='http://www.google.com/2005/gml/data' 
-    xmlns:expr='http://www.google.com/2005/gml/expr'>
+<html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true' b:templateUrl='indie.xml' b:templateVersion='1.3.0' expr:dir='data:blog.languageDirection' 
+  xmlns='http://www.w3.org/1999/xhtml' 
+  xmlns:b='http://www.google.com/2005/gml/b' 
+  xmlns:data='http://www.google.com/2005/gml/data' 
+  xmlns:expr='http://www.google.com/2005/gml/expr'>
 	
 	{% include blogger/head.xml %}
   <body>
@@ -51,12 +44,12 @@
                         <b:include data='{ iconClass: &quot;search-expand-icon&quot; }' name='searchIcon'/>
                       </div>
                     </button>
-					{% include blogger/section.xml slug='search' %}
+					          {% include blogger/section.xml slug='search' %}
                   </div>
                 </b:if>
                 <div class='clearboth'/>
                 <div class='blog-name container'>
-					{% include blogger/section.xml slug='header' %}
+					        {% include blogger/section.xml slug='header' %}
                   <b:if cond='data:view.isLayoutMode or data:widgets any (w =&gt; w.sectionId == &quot;subscription&quot;)'>
                     {% include blogger/section.xml slug='subscribe' %}
                   </b:if>
