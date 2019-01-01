@@ -17,10 +17,14 @@ addons:
 
   google_tag_manager: 
     id: GTM-MVFWXX9
-    enabled: true
+    enabled: false
 
   google_adsense:
     id: ca-pub-6922931690128889
+    enabled: true
+
+  google_optimize:
+    id: GTM-MRK4GKZ
     enabled: true
 
   blogger:
