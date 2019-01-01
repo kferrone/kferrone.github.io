@@ -8,7 +8,7 @@ type: defaultMarkup
             <span class='num_comments'>
                 <b:if cond='data:post.numberOfComments &gt; 0'>
                     <b:message name='messages.numberOfComments'>
-                        <b:param expr:value='data:post.numberOfComments' name='numComments'/>
+                        <b:param name='numComments' expr:value='data:post.numberOfComments' />
                     </b:message>
                 <b:else/>
                     <data:messages.postAComment/>
@@ -54,7 +54,9 @@ type: defaultMarkup
                 <b:include cond='data:widget.type == &quot;Blog&quot;' data='post' name='postFooterAuthorProfile'/>
             </div>
             <b:if cond='data:view.isSingleItem'>
-                <b:include data='{ shareButtonClass: &quot;post-share-buttons-bottom invisible&quot;, overridden: true }' name='maybeAddShareButtons'/>
+                <b:include 
+                	name='maybeAddShareButtons' 
+                	data='{ shareButtonClass: &quot;post-share-buttons-bottom invisible&quot;, overridden: true }' />
                 <b:else/>
                 <b:include data='post' name='postFooterJumpLink'/>
             </b:if>

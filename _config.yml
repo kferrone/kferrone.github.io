@@ -19,6 +19,10 @@ addons:
     id: GTM-MVFWXX9
     enabled: true
 
+  google_adsense:
+    id: ca-pub-6922931690128889
+    enabled: true
+
   blogger:
     id: '3240227952105036963'
     key: 'AIzaSyDjJNQ9UsIHdYaeAM02LGMo1LFplKzDddU'
