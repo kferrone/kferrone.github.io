@@ -1,12 +1,14 @@
  <head>
-   <meta content='width=device-width, initial-scale=1' name='viewport'/>
+   <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
    <title>
      <data:view.title.escaped/>
    </title>
    <b:include data='blog' name='all-head-content'/>
-	 {% include blogger/skin.xml %}
 
-   {% include blogger/defaultMarkups.xml %}
+	 {% include blogger/skin.xml style=include.style template=include.template %}
+   
    <b:include 
     name='responsiveImageStyle' 
     cond='not data:view.isPreview' data='{                         image: data:skin.vars.body_background.image,                         selector: &quot;.bg-photo&quot;,                         imageSizes: [480, 640, 800, 1200, 1600]                      }' />
@@ -15,5 +17,8 @@
    </b:if>
    <b:include data='blog' name='google-analytics'/>
    <script async='async' src='https://www.gstatic.com/external_hosted/clipboardjs/clipboard.min.js'/>
+
+  {% include css_imports.html %}
+
  </head>
  

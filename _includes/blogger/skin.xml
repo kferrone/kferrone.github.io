@@ -4,11 +4,11 @@
 {% include blogger/variables.xml %} 
  */
 
-{% include style.scss slug='contempo' %}
+{% include style.scss slug=include.style %}
 ]]>
 </b:skin>
 <b:template-skin>
   <![CDATA[
-  {% include style.scss slug='template-skin' %}
+  {% include style.scss slug=include.template %}
   ]]>
 </b:template-skin>

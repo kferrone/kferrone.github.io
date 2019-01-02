@@ -7,7 +7,7 @@
   xmlns:data='http://www.google.com/2005/gml/data' 
   xmlns:expr='http://www.google.com/2005/gml/expr'>
 	
-	{% include blogger/head.xml %}
+	{% include blogger/head.xml style='contempo' %}
   <body>
     <b:class cond='data:view.isPreview' name='preview'/>
     <b:class cond='data:view.isSingleItem' name='item-view'/>
