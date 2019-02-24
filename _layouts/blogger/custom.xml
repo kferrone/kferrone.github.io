@@ -19,7 +19,18 @@
 						name='Header' 
 						class='container' 
 						maxwidgets='5'
-						showaddelement='false'></section>
+						showaddelement='false'>
+						<b:widget id='CoolMessage' locked='false' title='Foo' type='HTML' visible='true'>
+							<b:includable id='main'>
+								<h1>
+									<data:title/>
+								</h1>
+								<div>
+									Hello Word
+								</div>
+							</b:includable>
+						</b:widget>
+					</b:section>
 
 					<h1 class="brand-title">
 						{{ site.title | default: site.github.repository_name }}
