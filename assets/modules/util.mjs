@@ -17,6 +17,14 @@ export async function getDataModel() {
     return axios.get('/assets/models/model.json');
 }
 
+/**
+ * Sends an email with axios to google cloud functions
+ */
+export function sendContactMeEmail(email) {
+    const URL = "https://us-central1-kellyferrone-211016.cloudfunctions.net/sendgridEmail"
+    return axios.post(URL,email);
+}
+
 export function saveLocal(key, value) {
     window.localStorage.setItem(key,value);
     return value;

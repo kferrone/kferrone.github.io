@@ -5,7 +5,8 @@ class: ContactMe
 permalink: /contact
 ---
 <form 
-    class="pure-form pure-form-stacked contact-me">
+    class="pure-form pure-form-stacked contact-me"
+    @submit="sendEmailEventHandler">
     <fieldset>
         <div class="pure-control-group">
             <label 
@@ -17,7 +18,7 @@ permalink: /contact
                 name="subject" 
                 type="text" 
                 placeholder="Message title" 
-                v-model="subject">
+                v-model="email.subject">
         </div>
         <div class="pure-control-group">
             <label 
@@ -29,7 +30,7 @@ permalink: /contact
                 name="email" 
                 type="email" 
                 placeholder="Email" 
-                v-model="email">
+                v-model="email.from">
         </div>
         <div class="pure-control-group">
             <label 
@@ -41,13 +42,14 @@ permalink: /contact
                 name="message" 
                 class="pure-input-1-2" 
                 placeholder="Message to Kelly" 
-                v-model="message">
+                v-model="email.body">
             </textarea>
         </div>
         <div class="pure-control-group">
             <button 
                 type="submit" 
-                class="pure-button pure-button-primary">
+                class="pure-button pure-button-primary"
+            >
                 Send
             </button>
         </div>

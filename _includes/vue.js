@@ -51,7 +51,8 @@ var vm = new Vue({
             getPostMeta: this.getPostMeta,
             getPostList: this.getPostList,
             blogger: this.blogger,
-            profile: this.profile
+            profile: this.profile,
+            sendEmail: util.sendContactMeEmail
         }
     }
 });
