@@ -1,6 +1,7 @@
 ---
 title: main theme
 ---
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css');
 @import "{{ site.theme }}";
 {% include collection.scss collection='components' %}
 {% include collection.scss collection='views' %}
